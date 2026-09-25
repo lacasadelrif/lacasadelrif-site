@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>La Casa del Rif | Coming Soon</title>
+
+  <meta name="description"
+        content="La Casa del Rif — Coming soon. Próxima apertura. الافتتاح قريباً.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f3ea;
+      color: #183b32;
+      min-height: 100vh;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 850px;
+      padding: 30px 20px;
+    }
+
+    .languages {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 35px;
+    }
+
+    .lang {
+      border: 1px solid #183b32;
+      background: transparent;
+      color: #183b32;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .lang.active,
+    .lang:hover {
+      background: #183b32;
+      color: white;
+    }
+
+    .logo {
+      width: 105px;
+      height: 105px;
+      margin: 0 auto 28px;
+      border: 2px solid #183b32;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, serif;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .brand {
+      font-size: 15px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #a67835;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 10vw, 80px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .line {
+      width: 70px;
+      height: 2px;
+      background: #a67835;
+      margin: 0 auto 28px;
+    }
+
+    .opening {
+      font-family: Georgia, serif;
+      color: #a67835;
+      font-size: clamp(25px, 5vw, 38px);
+      margin-bottom: 20px;
+    }
+
+    .description {
+      max-width: 600px;
+      margin: auto;
+      color: #53635e;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .buttons {
+      margin-top: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1px solid #183b32;
+      border-radius: 30px;
+      color: #183b32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #183b32;
+      color: white;
+    }
+
+    .footer {
+      margin-top: 55px;
+      color: #7b8580;
+      font-size: 13px;
+    }
+
+    [dir="rtl"] {
+      font-family: Arial, Tahoma, sans-serif;
+    }
+
+    [dir="rtl"] .brand {
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 500px) {
+      .content {
+        padding: 20px 5px;
+      }
+
+      .logo {
+        width: 85px;
+        height: 85px;
+        font-size: 30px;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <section class="content">
+
+      <!-- Language selector -->
+      <div class="languages">
+        <button class="lang" onclick="setLanguage('ar')">العربية</button>
+        <button class="lang active" onclick="setLanguage('es')">ES</button>
+        <button class="lang" onclick="setLanguage('en')">EN</button>
+      </div>
+
+      <div class="logo">LR</div>
+
+      <div class="brand">La Casa del Rif</div>
+
+      <h1 id="welcome">Bienvenidos</h1>
+
+      <div class="line"></div>
+
+      <div class="opening" id="opening">
+        Abrimos muy pronto
+      </div>
+
+      <p class="description" id="description">
+        Una nueva dirección llega muy pronto.
+        La Casa del Rif prepara para vosotros una experiencia
+        auténtica, cálida y llena de sabores.
+      </p>
+
+      <div class="buttons">
+        <a class="button" href="mailto:contact@lacasadelrif.com" id="contact">
+          Contáctanos
+        </a>
+      </div>
+
+      <div class="footer">
+        © 2026 La Casa del Rif
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    const translations = {
+
+      es: {
+        welcome: "Bienvenidos",
+        opening: "Abrimos muy pronto",
+        description:
+          "Una nueva dirección llega muy pronto. La Casa del Rif prepara para vosotros una experiencia auténtica, cálida y llena de sabores.",
+        contact: "Contáctanos",
+        direction: "ltr"
+      },
+
+      en: {
+        welcome: "Welcome",
+        opening: "Opening soon",
+        description:
+          "A new destination is coming soon. La Casa del Rif is preparing an authentic, warm and flavorful experience for you.",
+        contact: "Contact us",
+        direction: "ltr"
+      },
+
+      ar: {
+        welcome: "مرحباً بكم",
+        opening: "الافتتاح قريباً",
+        description:
+          "وجهة جديدة تفتح أبوابها قريباً. لا كاسا ديل ريف تحضر لكم تجربة أصيلة، دافئة ومليئة بالنكهات.",
+        contact: "تواصل معنا",
+        direction: "rtl"
+      }
+
+    };
+
+    function setLanguage(language) {
+
+      const t = translations[language];
+
+      document.documentElement.lang = language;
+      document.documentElement.dir = t.direction;
+
+      document.getElementById("welcome").textContent = t.welcome;
+      document.getElementById("opening").textContent = t.opening;
+      document.getElementById("description").textContent = t.description;
+      document.getElementById("contact").textContent = t.contact;
+
+      document.querySelectorAll(".lang").forEach(button => {
+        button.classList.remove("active");
+      });
+
+      event.target.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>

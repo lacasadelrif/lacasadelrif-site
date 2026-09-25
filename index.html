@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>La Casa del Rif | Coming Soon</title>
+  <title>La Casa del Rif | Próxima apertura</title>
 
-  <meta name="description"
-        content="La Casa del Rif — Coming soon. Próxima apertura. الافتتاح قريباً.">
+  <meta
+    name="description"
+    content="La Casa del Rif — Próxima apertura. Una experiencia auténtica del Rif."
+  >
 
   <style>
     * {
@@ -16,10 +18,22 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --green: #183b32;
+      --gold: #a67835;
+      --cream: #f7f3ea;
+      --text: #53635e;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f3ea;
-      color: #183b32;
+      background: var(--cream);
+      color: var(--green);
       min-height: 100vh;
     }
 
@@ -28,138 +42,201 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 30px 20px;
-      text-align: center;
+      padding: 25px 20px;
     }
 
     .content {
       width: 100%;
       max-width: 850px;
-      padding: 30px 20px;
+      text-align: center;
+      padding: 35px 20px;
     }
+
+    /* LANGUAGE BUTTONS */
 
     .languages {
       display: flex;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 35px;
+      margin-bottom: 38px;
     }
 
     .lang {
-      border: 1px solid #183b32;
+      border: 1px solid var(--green);
       background: transparent;
-      color: #183b32;
-      padding: 8px 14px;
-      border-radius: 20px;
+      color: var(--green);
+      padding: 8px 15px;
+      border-radius: 30px;
       cursor: pointer;
       font-size: 13px;
       font-weight: bold;
+      transition: 0.3s ease;
     }
 
-    .lang.active,
-    .lang:hover {
-      background: #183b32;
-      color: white;
+    .lang:hover,
+    .lang.active {
+      background: var(--green);
+      color: var(--white);
     }
+
+    /* LOGO */
 
     .logo {
-      width: 105px;
-      height: 105px;
+      width: 110px;
+      height: 110px;
       margin: 0 auto 28px;
-      border: 2px solid #183b32;
+
+      border: 2px solid var(--green);
       border-radius: 50%;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       font-family: Georgia, serif;
-      font-size: 36px;
+      font-size: 38px;
       font-weight: bold;
+      letter-spacing: -2px;
     }
+
+    /* BRAND */
 
     .brand {
       font-size: 15px;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       text-transform: uppercase;
-      color: #a67835;
+      color: var(--gold);
       font-weight: bold;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 10vw, 80px);
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .line {
-      width: 70px;
-      height: 2px;
-      background: #a67835;
-      margin: 0 auto 28px;
-    }
-
-    .opening {
-      font-family: Georgia, serif;
-      color: #a67835;
-      font-size: clamp(25px, 5vw, 38px);
       margin-bottom: 20px;
     }
 
-    .description {
-      max-width: 600px;
-      margin: auto;
-      color: #53635e;
-      font-size: 17px;
-      line-height: 1.8;
+    /* MAIN TITLE */
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(45px, 11vw, 90px);
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 25px;
+      color: var(--green);
     }
 
+    /* GOLD LINE */
+
+    .line {
+      width: 75px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 30px;
+    }
+
+    /* OPENING */
+
+    .opening {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--gold);
+      font-size: clamp(27px, 5vw, 40px);
+      margin-bottom: 22px;
+    }
+
+    /* DESCRIPTION */
+
+    .description {
+      max-width: 620px;
+      margin: 0 auto;
+
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    /* CONTACT BUTTON */
+
     .buttons {
-      margin-top: 35px;
+      margin-top: 38px;
     }
 
     .button {
       display: inline-block;
-      padding: 14px 28px;
-      border: 1px solid #183b32;
+
+      padding: 14px 30px;
+
+      border: 1px solid var(--green);
       border-radius: 30px;
-      color: #183b32;
+
+      color: var(--green);
       text-decoration: none;
+
+      font-size: 15px;
       font-weight: bold;
+
+      transition: 0.3s ease;
     }
 
     .button:hover {
-      background: #183b32;
-      color: white;
+      background: var(--green);
+      color: var(--white);
     }
+
+    /* FOOTER */
 
     .footer {
-      margin-top: 55px;
+      margin-top: 60px;
+
       color: #7b8580;
       font-size: 13px;
-    }
-
-    [dir="rtl"] {
-      font-family: Arial, Tahoma, sans-serif;
-    }
-
-    [dir="rtl"] .brand {
       letter-spacing: 1px;
     }
 
+    /* ARABIC */
+
+    html[dir="rtl"] .brand {
+      letter-spacing: 1px;
+    }
+
+    html[dir="rtl"] .description {
+      font-family: Arial, Tahoma, sans-serif;
+      line-height: 2;
+    }
+
+    /* MOBILE */
+
     @media (max-width: 500px) {
+
+      .page {
+        padding: 15px;
+      }
+
       .content {
-        padding: 20px 5px;
+        padding: 20px 8px;
+      }
+
+      .languages {
+        margin-bottom: 30px;
       }
 
       .logo {
-        width: 85px;
-        height: 85px;
+        width: 88px;
+        height: 88px;
         font-size: 30px;
+      }
+
+      .brand {
+        font-size: 12px;
+        letter-spacing: 3px;
       }
 
       .description {
         font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .opening {
+        font-size: 27px;
+      }
+
+      .footer {
+        margin-top: 45px;
       }
     }
   </style>
@@ -171,36 +248,99 @@
 
     <section class="content">
 
-      <!-- Language selector -->
+      <!-- LANGUAGE SELECTOR -->
+
       <div class="languages">
-        <button class="lang" onclick="setLanguage('ar')">العربية</button>
-        <button class="lang active" onclick="setLanguage('es')">ES</button>
-        <button class="lang" onclick="setLanguage('en')">EN</button>
+
+        <button
+          class="lang active"
+          onclick="setLanguage('es', this)"
+        >
+          ES
+        </button>
+
+        <button
+          class="lang"
+          onclick="setLanguage('ar', this)"
+        >
+          العربية
+        </button>
+
+        <button
+          class="lang"
+          onclick="setLanguage('en', this)"
+        >
+          EN
+        </button>
+
       </div>
 
-      <div class="logo">LR</div>
 
-      <div class="brand">La Casa del Rif</div>
+      <!-- LOGO -->
 
-      <h1 id="welcome">Bienvenidos</h1>
+      <div class="logo">
+        LR
+      </div>
+
+
+      <!-- BRAND -->
+
+      <div class="brand">
+        La Casa del Rif
+      </div>
+
+
+      <!-- TITLE -->
+
+      <h1 id="welcome">
+        Bienvenidos
+      </h1>
+
+
+      <!-- LINE -->
 
       <div class="line"></div>
 
-      <div class="opening" id="opening">
+
+      <!-- OPENING -->
+
+      <div
+        class="opening"
+        id="opening"
+      >
         Abrimos muy pronto
       </div>
 
-      <p class="description" id="description">
+
+      <!-- DESCRIPTION -->
+
+      <p
+        class="description"
+        id="description"
+      >
         Una nueva dirección llega muy pronto.
-        La Casa del Rif prepara para vosotros una experiencia
-        auténtica, cálida y llena de sabores.
+        La Casa del Rif prepara para vosotros
+        una experiencia auténtica, cálida y llena
+        de sabores.
       </p>
 
+
+      <!-- CONTACT -->
+
       <div class="buttons">
-        <a class="button" href="mailto:contact@lacasadelrif.com" id="contact">
+
+        <a
+          class="button"
+          href="mailto:contact@lacasadelrif.com"
+          id="contact"
+        >
           Contáctanos
         </a>
+
       </div>
+
+
+      <!-- FOOTER -->
 
       <div class="footer">
         © 2026 La Casa del Rif
@@ -210,56 +350,80 @@
 
   </main>
 
+
   <script>
+
     const translations = {
 
       es: {
+        title: "La Casa del Rif | Próxima apertura",
         welcome: "Bienvenidos",
         opening: "Abrimos muy pronto",
         description:
           "Una nueva dirección llega muy pronto. La Casa del Rif prepara para vosotros una experiencia auténtica, cálida y llena de sabores.",
         contact: "Contáctanos",
-        direction: "ltr"
-      },
-
-      en: {
-        welcome: "Welcome",
-        opening: "Opening soon",
-        description:
-          "A new destination is coming soon. La Casa del Rif is preparing an authentic, warm and flavorful experience for you.",
-        contact: "Contact us",
-        direction: "ltr"
+        direction: "ltr",
+        language: "es"
       },
 
       ar: {
+        title: "لا كاسا ديل ريف | الافتتاح قريباً",
         welcome: "مرحباً بكم",
         opening: "الافتتاح قريباً",
         description:
           "وجهة جديدة تفتح أبوابها قريباً. لا كاسا ديل ريف تحضر لكم تجربة أصيلة، دافئة ومليئة بالنكهات.",
         contact: "تواصل معنا",
-        direction: "rtl"
+        direction: "rtl",
+        language: "ar"
+      },
+
+      en: {
+        title: "La Casa del Rif | Opening Soon",
+        welcome: "Welcome",
+        opening: "Opening soon",
+        description:
+          "A new destination is coming soon. La Casa del Rif is preparing an authentic, warm and flavorful experience for you.",
+        contact: "Contact us",
+        direction: "ltr",
+        language: "en"
       }
 
     };
 
-    function setLanguage(language) {
 
-      const t = translations[language];
+    function setLanguage(language, button) {
 
-      document.documentElement.lang = language;
-      document.documentElement.dir = t.direction;
+      const text = translations[language];
 
-      document.getElementById("welcome").textContent = t.welcome;
-      document.getElementById("opening").textContent = t.opening;
-      document.getElementById("description").textContent = t.description;
-      document.getElementById("contact").textContent = t.contact;
+      document.title = text.title;
 
-      document.querySelectorAll(".lang").forEach(button => {
-        button.classList.remove("active");
-      });
+      document.documentElement.lang = text.language;
 
-      event.target.classList.add("active");
+      document.documentElement.dir = text.direction;
+
+      document.getElementById("welcome").textContent =
+        text.welcome;
+
+      document.getElementById("opening").textContent =
+        text.opening;
+
+      document.getElementById("description").textContent =
+        text.description;
+
+      document.getElementById("contact").textContent =
+        text.contact;
+
+
+      document
+        .querySelectorAll(".lang")
+        .forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+
+      button.classList.add("active");
     }
+
   </script>
 
 </body>

@@ -1,534 +1,1550 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú | La Casa del Rif</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Menú | La Casa del Rif</title>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f1e3;
-      color: #183b32;
-      line-height: 1.5;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    header {
-      text-align: center;
-      padding: 25px 15px 15px;
-      background: #f7f1e3;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f1e3;
+  color:#183b32;
+  line-height:1.5;
+}
 
-    .logo {
-      width: 190px;
-      max-width: 70%;
-      height: auto;
-    }
+header{
+  text-align:center;
+  padding:25px 15px 15px;
+}
 
-    .languages {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 15px;
-    }
+.logo{
+  width:190px;
+  max-width:70%;
+  height:auto;
+}
 
-    .languages button {
-      border: 1px solid #c7a85b;
-      background: transparent;
-      color: #183b32;
-      padding: 7px 13px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.languages{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
 
-    .languages button.active,
-    .languages button:hover {
-      background: #183b32;
-      color: #fff;
-    }
+.languages button{
+  border:2px solid #c7a85b;
+  background:transparent;
+  color:#183b32;
+  padding:8px 15px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:15px;
+  transition:.25s;
+}
 
-    .menu-title {
-      text-align: center;
-      padding: 20px 15px 10px;
-    }
+.languages button:hover,
+.languages button.active{
+  background:#183b32;
+  color:white;
+}
 
-    .menu-title h1 {
-      font-family: Georgia, serif;
-      color: #183b32;
-      font-size: 34px;
-      letter-spacing: 2px;
-    }
+.menu-title{
+  text-align:center;
+  padding:25px 15px 15px;
+}
 
-    .menu-title p {
-      color: #9b7a32;
-      margin-top: 5px;
-      font-style: italic;
-    }
+.menu-title h1{
+  font-family:Georgia,serif;
+  color:#183b32;
+  font-size:44px;
+  letter-spacing:2px;
+}
 
-    .container {
-      width: 94%;
-      max-width: 1000px;
-      margin: auto;
-      padding-bottom: 40px;
-    }
+.menu-title p{
+  color:#9b7a32;
+  margin-top:8px;
+  font-size:20px;
+  font-style:italic;
+}
 
-    .category {
-      margin: 28px 0;
-      background: rgba(255,255,255,0.55);
-      border: 1px solid #d8c58e;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(24,59,50,0.06);
-    }
+.container{
+  width:94%;
+  max-width:1000px;
+  margin:auto;
+  padding-bottom:40px;
+}
 
-    .category-title {
-      text-align: center;
-      font-family: Georgia, serif;
-      color: #9b7a32;
-      font-size: 24px;
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #d8c58e;
-    }
+.category{
+  margin:28px 0;
+  background:rgba(255,255,255,.58);
+  border:2px solid #d8c58e;
+  border-radius:18px;
+  padding:20px 32px;
+  box-shadow:0 4px 15px rgba(24,59,50,.06);
+}
 
-    .category-note {
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 14px;
-      font-style: italic;
-    }
+.category-title{
+  text-align:center;
+  font-family:Georgia,serif;
+  color:#9b7a32;
+  font-size:27px;
+  margin-bottom:18px;
+  padding-bottom:12px;
+  border-bottom:2px solid #d8c58e;
+}
 
-    .item {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 15px;
-      padding: 11px 2px;
-      border-bottom: 1px dashed #d8c58e;
-    }
+.category-note{
+  text-align:center;
+  font-size:14px;
+  color:#777;
+  margin:10px 0 15px;
+  font-style:italic;
+}
 
-    .item:last-child {
-      border-bottom: none;
-    }
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  padding:13px 2px;
+  border-bottom:1px dashed #d8c58e;
+}
 
-    .item-name {
-      font-weight: 600;
-      color: #183b32;
-      flex: 1;
-    }
+.item:last-child{
+  border-bottom:none;
+}
 
-    .item-description {
-      display: block;
-      font-size: 13px;
-      color: #777;
-      font-weight: normal;
-      margin-top: 3px;
-    }
+.item-name{
+  font-weight:600;
+  color:#183b32;
+  flex:1;
+  font-size:17px;
+}
 
-    .price {
-      color: #9b7a32;
-      font-weight: bold;
-      white-space: nowrap;
-    }
+.item-description{
+  display:block;
+  font-size:13px;
+  color:#777;
+  font-weight:normal;
+  margin-top:4px;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px 15px;
-      background: #183b32;
-      color: white;
-      margin-top: 30px;
-    }
+.price{
+  color:#9b7a32;
+  font-weight:bold;
+  white-space:nowrap;
+  font-size:17px;
+}
 
-    .back-home {
-      display: inline-block;
-      margin-top: 12px;
-      color: #fff;
-      text-decoration: none;
-      border: 1px solid #c7a85b;
-      padding: 8px 18px;
-      border-radius: 20px;
-    }
+footer{
+  text-align:center;
+  padding:28px 15px;
+  background:#183b32;
+  color:white;
+  margin-top:30px;
+}
 
-    @media (max-width: 600px) {
+.back-home{
+  display:inline-block;
+  margin-top:12px;
+  color:white;
+  text-decoration:none;
+  border:1px solid #c7a85b;
+  padding:9px 20px;
+  border-radius:25px;
+}
 
-      .logo {
-        width: 160px;
-      }
+body.rtl{
+  direction:rtl;
+  font-family:Arial,Tahoma,sans-serif;
+}
 
-      .menu-title h1 {
-        font-size: 28px;
-      }
+body.rtl .item{
+  direction:rtl;
+}
 
-      .category {
-        padding: 15px;
-        margin: 20px 0;
-      }
+body.rtl .item-name,
+body.rtl .item-description{
+  text-align:right;
+}
 
-      .category-title {
-        font-size: 21px;
-      }
+body.rtl .price{
+  direction:ltr;
+}
 
-      .item {
-        padding: 10px 0;
-      }
+body.rtl .menu-title h1,
+body.rtl .category-title{
+  font-family:Arial,Tahoma,sans-serif;
+}
 
-      .item-name {
-        font-size: 15px;
-      }
+body.rtl .menu-title p{
+  font-style:normal;
+}
 
-      .price {
-        font-size: 14px;
-      }
-    }
-  </style>
+body.de{
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+@media(max-width:600px){
+
+  .logo{
+    width:165px;
+  }
+
+  .languages button{
+    padding:7px 13px;
+    font-size:14px;
+  }
+
+  .menu-title h1{
+    font-size:34px;
+  }
+
+  .menu-title p{
+    font-size:17px;
+    line-height:1.7;
+  }
+
+  .category{
+    padding:16px;
+    margin:20px 0;
+    border-radius:15px;
+  }
+
+  .category-title{
+    font-size:22px;
+    line-height:1.5;
+  }
+
+  .item{
+    gap:10px;
+    padding:12px 0;
+  }
+
+  .item-name{
+    font-size:15px;
+  }
+
+  .item-description{
+    font-size:12px;
+  }
+
+  .price{
+    font-size:15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <img class="logo" src="logo.png" alt="La Casa del Rif Restaurante">
 
-  <div class="languages">
-    <button class="active">ES</button>
-    <button>العربية</button>
-    <button>EN</button>
-  </div>
+<img
+  class="logo"
+  src="logo.png"
+  alt="La Casa del Rif Restaurante"
+>
+
+<div class="languages">
+
+<button id="lang-es" class="active" onclick="changeLanguage('es')">
+ES
+</button>
+
+<button id="lang-ar" onclick="changeLanguage('ar')">
+العربية
+</button>
+
+<button id="lang-en" onclick="changeLanguage('en')">
+EN
+</button>
+
+<button id="lang-de" onclick="changeLanguage('de')">
+DE
+</button>
+
+</div>
+
 </header>
 
+
 <div class="menu-title">
-  <h1>MENÚ</h1>
-  <p>De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.</p>
+
+<h1 data-i18n="menu_title">
+MENÚ
+</h1>
+
+<p data-i18n="menu_subtitle">
+De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.
+</p>
+
 </div>
+
 
 <main class="container">
 
-  <!-- DESAYUNOS -->
-  <section class="category">
-    <h2 class="category-title">☀️ DESAYUNOS</h2>
-
-    <div class="item"><span class="item-name">Tostada de Aguacate y Salmón</span><span class="price">6,00 €</span></div>
-    <div class="item"><span class="item-name">Tostada de Huevo y Mortadela</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Tostada de Atún y Queso</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Pan con Tomate</span><span class="price">3,00 €</span></div>
-
-    <div class="item">
-      <span class="item-name">
-        Plato de Desayuno Marroquí
-        <span class="item-description">Huevos, queso, aceitunas, aceite de oliva, miel, pan casero y té marroquí.</span>
-      </span>
-      <span class="price">7,50 €</span>
-    </div>
-
-    <div class="item"><span class="item-name">Plato de Huevos</span><span class="price">6,00 €</span></div>
-    <div class="item"><span class="item-name">Huevos con Tomate y Queso de Cabra</span><span class="price">6,50 €</span></div>
-    <div class="item"><span class="item-name">Khlii con Huevos</span><span class="price">8,50 €</span></div>
-
-    <div class="item">
-      <span class="item-name">Harcha con Topping<span class="item-description">Incluye té marroquí o café.</span></span>
-      <span class="price">4,50 €</span>
-    </div>
-
-    <div class="item">
-      <span class="item-name">Msemen con Topping<span class="item-description">Incluye té marroquí o café.</span></span>
-      <span class="price">4,50 €</span>
-    </div>
-
-    <div class="item">
-      <span class="item-name">Baghrir con Topping<span class="item-description">Incluye té marroquí o café.</span></span>
-      <span class="price">4,50 €</span>
-    </div>
-
-    <div class="item"><span class="item-name">Avena con Leche, Fruta, Frutos Secos y Miel</span><span class="price">6,00 €</span></div>
-  </section>
-
-
-  <!-- ENTRANTES -->
-  <section class="category">
-    <h2 class="category-title">🥗 ENTRANTES ÁRABES Y ENSALADAS</h2>
-
-    <div class="item"><span class="item-name">Harira Marroquí</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">Sopa de Marisco</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Falafel</span><span class="price">6,00 €</span></div>
-    <div class="item"><span class="item-name">Taktouka</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Hummus</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Zaalouk</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Carpaccio de Calabacín</span><span class="price">6,50 €</span></div>
-    <div class="item"><span class="item-name">Maakouda</span><span class="price">6,00 €</span></div>
-    <div class="item"><span class="item-name">Pastela de Pollo</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Pastela de Pescado</span><span class="price">6,50 €</span></div>
-    <div class="item"><span class="item-name">Briouates con Salsa</span><span class="price">6,50 €</span></div>
-    <div class="item"><span class="item-name">Saffa Marroquí</span><span class="price">6,00 €</span></div>
-    <div class="item"><span class="item-name">Ensalada de Salmón</span><span class="price">6,00 €</span></div>
-    <div class="item"><span class="item-name">Ensalada de Arroz</span><span class="price">5,00 €</span></div>
-    <div class="item"><span class="item-name">Ensalada Marroquí</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">Ensalada de Cabra</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Ensalada de Pulpo</span><span class="price">8,00 €</span></div>
-  </section>
-
-
-  <!-- NACHOS -->
-  <section class="category">
-    <h2 class="category-title">🧀 NACHOS</h2>
-
-    <div class="item"><span class="item-name">Nachos con Guacamole</span><span class="price">7,00 €</span></div>
-    <div class="item"><span class="item-name">Nachos con Carne Picada y Salsa de Queso</span><span class="price">9,00 €</span></div>
-  </section>
-
-
-  <!-- TAJINES -->
-  <section class="category">
-    <h2 class="category-title">🍲 TAJINES MARROQUÍES</h2>
-
-    <div class="item"><span class="item-name">Tajín de Ternera con Ciruelas</span><span class="price">10,50 €</span></div>
-    <div class="item"><span class="item-name">Tajín de Cordero</span><span class="price">14,50 €</span></div>
-    <div class="item"><span class="item-name">Tajín de Pollo con Daghmira</span><span class="price">9,50 €</span></div>
-    <div class="item"><span class="item-name">Tajín de Kefta con Huevo</span><span class="price">9,50 €</span></div>
-    <div class="item"><span class="item-name">Tajín de Gambas</span><span class="price">11,50 €</span></div>
-    <div class="item"><span class="item-name">Tanjia Marrakchia al Carbón</span><span class="price">14,00 €</span></div>
-    <div class="item"><span class="item-name">Rfissa</span><span class="price">10,00 €</span></div>
-  </section>
-
-
-  <!-- CUSCUS -->
-  <section class="category">
-    <h2 class="category-title">🍚 CUSCÚS MARROQUÍ</h2>
-
-    <div class="item"><span class="item-name">Cuscús de Verduras</span><span class="price">8,00 €</span></div>
-    <div class="item"><span class="item-name">Cuscús de Ternera</span><span class="price">10,50 €</span></div>
-    <div class="item"><span class="item-name">Cuscús de Cordero</span><span class="price">14,00 €</span></div>
-    <div class="item"><span class="item-name">Cuscús de Pollo</span><span class="price">9,50 €</span></div>
-  </section>
-
-
-  <!-- PESCADOS -->
-  <section class="category">
-    <h2 class="category-title">🐟 PESCADOS</h2>
-
-    <div class="item"><span class="item-name">Fritura de Pescado Mixta</span><span class="price">17,50 €</span></div>
-    <div class="item"><span class="item-name">Paella de Pescado</span><span class="price">14,50 €</span></div>
-
-    <div class="item">
-      <span class="item-name">Cubo de Felicidad de Marisco<span class="item-description">Salsa blanca o salsa de tomate.</span></span>
-      <span class="price">19,50 €</span>
-    </div>
-
-    <div class="item">
-      <span class="item-name">Cazuela de Marisco<span class="item-description">Para 1 persona · Salsa blanca o salsa de tomate.</span></span>
-      <span class="price">12,50 €</span>
-    </div>
-
-    <div class="item"><span class="item-name">Calamar Frito</span><span class="price">11,00 €</span></div>
-    <div class="item"><span class="item-name">Calamares a la Plancha</span><span class="price">11,50 €</span></div>
-    <div class="item"><span class="item-name">Mejillones a la Marinera</span><span class="price">11,50 €</span></div>
-    <div class="item"><span class="item-name">Mejillones al Ajillo</span><span class="price">11,50 €</span></div>
-    <div class="item"><span class="item-name">Navajas</span><span class="price">9,00 €</span></div>
-    <div class="item"><span class="item-name">Boquerones</span><span class="price">7,50 €</span></div>
-    <div class="item"><span class="item-name">Dorada a la Plancha</span><span class="price">12,00 €</span></div>
-    <div class="item"><span class="item-name">Dorada a la Sal</span><span class="price">15,50 €</span></div>
-    <div class="item"><span class="item-name">Lubina a la Plancha</span><span class="price">12,00 €</span></div>
-    <div class="item"><span class="item-name">Lubina a la Sal</span><span class="price">16,00 €</span></div>
-    <div class="item"><span class="item-name">Salmón</span><span class="price">13,00 €</span></div>
-    <div class="item"><span class="item-name">Lenguado</span><span class="price">12,50 €</span></div>
-    <div class="item"><span class="item-name">Pulpo a la Brasa</span><span class="price">13,50 €</span></div>
-    <div class="item"><span class="item-name">Cóctel de Pescado de La Casa del Rif</span><span class="price">17,00 €</span></div>
-
-    <p class="category-note">Pescados frescos según el día.</p>
-  </section>
-
-
-  <!-- CARNES -->
-  <section class="category">
-    <h2 class="category-title">🔥 PINCHITOS Y CARNES</h2>
-
-    <div class="item"><span class="item-name">Pinchitos de Carne Picada</span><span class="price">11,00 €</span></div>
-    <div class="item"><span class="item-name">Pinchitos de Pollo</span><span class="price">10,50 €</span></div>
-    <div class="item"><span class="item-name">Pinchitos Mixtos</span><span class="price">11,00 €</span></div>
-    <div class="item"><span class="item-name">Pinchitos de Cordero</span><span class="price">9,50 €</span></div>
-    <div class="item"><span class="item-name">Pinchitos de Hígado</span><span class="price">9,50 €</span></div>
-    <div class="item"><span class="item-name">Costillas</span><span class="price">15,50 €</span></div>
-    <div class="item"><span class="item-name">Entrecot</span><span class="price">14,50 €</span></div>
-    <div class="item"><span class="item-name">Crispy</span><span class="price">12,00 €</span></div>
-    <div class="item"><span class="item-name">Cordon Bleu</span><span class="price">12,00 €</span></div>
-    <div class="item"><span class="item-name">Plato de Pollo con Salsa de Champiñones</span><span class="price">12,00 €</span></div>
-  </section>
-
-
-  <!-- TACOS -->
-  <section class="category">
-    <h2 class="category-title">🌮 TACOS</h2>
-
-    <div class="item"><span class="item-name">Tacos de Carne Picada</span><span class="price">8,50 €</span></div>
-    <div class="item"><span class="item-name">Tacos de Pollo</span><span class="price">7,50 €</span></div>
-    <div class="item"><span class="item-name">Tacos Mixtos</span><span class="price">7,50 €</span></div>
-    <div class="item"><span class="item-name">Tacos de Pescado</span><span class="price">10,00 €</span></div>
-    <div class="item"><span class="item-name">Tacos Crispy</span><span class="price">9,00 €</span></div>
-    <div class="item"><span class="item-name">Tacos XL</span><span class="price">11,50 €</span></div>
-    <div class="item"><span class="item-name">Tacos La Casa del Rif</span><span class="price">13,00 €</span></div>
-
-    <p class="category-note">Opción gratinada al horno: +0,50 €</p>
-  </section>
-
-
-  <!-- HAMBURGUESAS -->
-  <section class="category">
-    <h2 class="category-title">🍔 HAMBURGUESAS</h2>
-
-    <div class="item"><span class="item-name">Hamburguesa de Ternera</span><span class="price">7,50 €</span></div>
-    <div class="item"><span class="item-name">Hamburguesa de Pollo</span><span class="price">7,00 €</span></div>
-    <div class="item"><span class="item-name">Hamburguesa Crispy</span><span class="price">8,50 €</span></div>
-    <div class="item"><span class="item-name">Hamburguesa Doble</span><span class="price">11,50 €</span></div>
-    <div class="item"><span class="item-name">Hamburguesa de Pescado</span><span class="price">8,00 €</span></div>
-    <div class="item"><span class="item-name">Hamburguesa La Casa del Rif</span><span class="price">11,00 €</span></div>
-  </section>
-
-
-  <!-- INFANTIL -->
-  <section class="category">
-    <h2 class="category-title">👧 MENÚ INFANTIL</h2>
-
-    <div class="item"><span class="item-name">Mini Burger (solo carne) + Patatas Fritas</span><span class="price">6,00 €</span></div>
-    <div class="item"><span class="item-name">Nuggets + Spaghetti</span><span class="price">6,00 €</span></div>
-  </section>
-
-
-  <!-- BOCADILLOS -->
-  <section class="category">
-    <h2 class="category-title">🥖 BOCADILLOS</h2>
-
-    <p class="category-note">Pan casero elaborado al carbón.</p>
-
-    <div class="item"><span class="item-name">Bocadillo de Pollo</span><span class="price">6,50 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo de Carne Picada</span><span class="price">7,00 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo Mixto</span><span class="price">7,00 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo de Gambas</span><span class="price">8,00 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo de Calamar</span><span class="price">8,00 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo de Pescado</span><span class="price">7,50 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo de Pollo Rojo</span><span class="price">8,00 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo Crispy</span><span class="price">8,00 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo de Merguez</span><span class="price">7,50 €</span></div>
-    <div class="item"><span class="item-name">Bocadillo de Hígado</span><span class="price">7,00 €</span></div>
-  </section>
-
-
-  <!-- PIZZAS -->
-  <section class="category">
-    <h2 class="category-title">🍕 PIZZAS</h2>
-
-    <div class="item"><span class="item-name">Pizza Margarita</span><span class="price">7,50 €</span></div>
-    <div class="item"><span class="item-name">Pizza Cuatro Quesos</span><span class="price">9,00 €</span></div>
-    <div class="item"><span class="item-name">Pizza de Marisco</span><span class="price">12,00 €</span></div>
-    <div class="item"><span class="item-name">Pizza Pesto</span><span class="price">10,50 €</span></div>
-    <div class="item"><span class="item-name">Pizza de Salmón</span><span class="price">11,00 €</span></div>
-    <div class="item"><span class="item-name">Pizza de Atún</span><span class="price">8,00 €</span></div>
-    <div class="item"><span class="item-name">Pizza de Verduras</span><span class="price">8,00 €</span></div>
-    <div class="item"><span class="item-name">Pizza Napolitana</span><span class="price">10,00 €</span></div>
-    <div class="item"><span class="item-name">Pizza de Tres Carnes</span><span class="price">10,00 €</span></div>
-  </section>
-
-
-  <!-- PASTA -->
-  <section class="category">
-    <h2 class="category-title">🍝 PASTA</h2>
-
-    <div class="item"><span class="item-name">Pasta de Pollo y Champiñones</span><span class="price">9,00 €</span></div>
-    <div class="item"><span class="item-name">Pasta de Gambas y Tomate</span><span class="price">10,00 €</span></div>
-    <div class="item"><span class="item-name">Pasticcio</span><span class="price">9,00 €</span></div>
-  </section>
-
-
-  <!-- POSTRES MARROQUIES -->
-  <section class="category">
-    <h2 class="category-title">🍰 POSTRES MARROQUÍES</h2>
-
-    <div class="item"><span class="item-name">Msemen</span><span class="price">2,00 €</span></div>
-    <div class="item"><span class="item-name">Harcha</span><span class="price">2,00 €</span></div>
-    <div class="item"><span class="item-name">Baghrir</span><span class="price">2,00 €</span></div>
-    <div class="item"><span class="item-name">Basbousa</span><span class="price">3,00 €</span></div>
-    <div class="item"><span class="item-name">Kunafa</span><span class="price">4,00 €</span></div>
-
-    <div class="item">
-      <span class="item-name">Dulces Marroquíes Variados</span>
-      <span class="price"></span>
-    </div>
-  </section>
-
-
-  <!-- POSTRES -->
-  <section class="category">
-    <h2 class="category-title">🍰 POSTRES Y PASTELERÍA</h2>
-
-    <div class="item"><span class="item-name">Cheesecake de Limón</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">Cheesecake de Pistacho</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">Cheesecake de Frambuesa</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">Tiramisú</span><span class="price">3,50 €</span></div>
-    <div class="item"><span class="item-name">Tarta de Lotus</span><span class="price">3,50 €</span></div>
-    <div class="item"><span class="item-name">Tarta de Chocolate</span><span class="price">3,50 €</span></div>
-    <div class="item"><span class="item-name">Jouara</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">Bolas de Helado</span><span class="price">2,50 €</span></div>
-  </section>
-
-
-  <!-- POSTRES Y BEBIDAS -->
-  <section class="category">
-    <h2 class="category-title">🍮 POSTRES Y BEBIDAS ESPECIALES</h2>
-
-    <div class="item"><span class="item-name">Flan</span><span class="price">2,00 €</span></div>
-    <div class="item"><span class="item-name">Muhallebi</span><span class="price">2,00 €</span></div>
-    <div class="item"><span class="item-name">Batido de Aguacate</span><span class="price">3,50 €</span></div>
-    <div class="item"><span class="item-name">Batido de Plátano</span><span class="price">3,50 €</span></div>
-    <div class="item"><span class="item-name">Batido de Frutas</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">Batido de Mango</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">Zumo de Naranja Natural</span><span class="price">4,00 €</span></div>
-    <div class="item"><span class="item-name">ZaaZaa</span><span class="price">5,00 €</span></div>
-  </section>
-
-
-  <!-- CAFE -->
-  <section class="category">
-    <h2 class="category-title">☕ CAFÉ Y TÉ</h2>
-
-    <div class="item"><span class="item-name">Café Solo</span><span class="price">1,50 €</span></div>
-    <div class="item"><span class="item-name">Cortado</span><span class="price">1,70 €</span></div>
-    <div class="item"><span class="item-name">Café con Leche</span><span class="price">1,80 €</span></div>
-    <div class="item"><span class="item-name">Americano</span><span class="price">1,90 €</span></div>
-    <div class="item"><span class="item-name">Cappuccino</span><span class="price">2,30 €</span></div>
-    <div class="item"><span class="item-name">Latte</span><span class="price">5,50 €</span></div>
-    <div class="item"><span class="item-name">Té Marroquí</span><span class="price">1,80 €</span></div>
-    <div class="item"><span class="item-name">Tetera para 1 Persona</span><span class="price">2,00 €</span></div>
-    <div class="item"><span class="item-name">Tetera para 2 Personas</span><span class="price">3,50 €</span></div>
-    <div class="item"><span class="item-name">Té de Azahar</span><span class="price">2,00 €</span></div>
-    <div class="item"><span class="item-name">Poleo</span><span class="price">2,00 €</span></div>
-  </section>
-
-
-  <!-- BEBIDAS -->
-  <section class="category">
-    <h2 class="category-title">🍹 BEBIDAS</h2>
-
-    <p class="category-note">TODO SIN ALCOHOL</p>
-
-    <div class="item"><span class="item-name">Mojito Clásico</span><span class="price">6,00 €</span></div>
-    <div class="item"><span class="item-name">Mojito Blue</span><span class="price">6,50 €</span></div>
-    <div class="item"><span class="item-name">Piña Colada</span><span class="price">7,00 €</span></div>
-    <div class="item"><span class="item-name">Matcha Iced Tea</span><span class="price">6,50 €</span></div>
-    <div class="item"><span class="item-name">Caramel Macchiato</span><span class="price">7,00 €</span></div>
-    <div class="item"><span class="item-name">San Francisco</span><span class="price">6,50 €</span></div>
-  </section>
+
+<!-- DESAYUNOS -->
+
+<section class="category">
+
+<h2 class="category-title">
+☀️ <span data-i18n="breakfast">DESAYUNOS</span>
+</h2>
+
+<div class="item">
+<span class="item-name" data-i18n="toast_avocado">
+Tostada de Aguacate y Salmón
+</span>
+<span class="price">6,00 €</span>
+</div>
+
+<div class="item">
+<span class="item-name" data-i18n="toast_egg">
+Tostada de Huevo y Mortadela
+</span>
+<span class="price">5,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name" data-i18n="toast_tuna">
+Tostada de Atún y Queso
+</span>
+<span class="price">5,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name" data-i18n="bread_tomato">
+Pan con Tomate
+</span>
+<span class="price">3,00 €</span>
+</div>
+
+<div class="item">
+<span class="item-name">
+<span data-i18n="moroccan_breakfast">
+Plato de Desayuno Marroquí
+</span>
+<span class="item-description" data-i18n="moroccan_breakfast_desc">
+Huevos, queso, aceitunas, aceite de oliva, miel, pan casero y té marroquí.
+</span>
+</span>
+<span class="price">7,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name" data-i18n="egg_plate">
+Plato de Huevos
+</span>
+<span class="price">6,00 €</span>
+</div>
+
+<div class="item">
+<span class="item-name" data-i18n="eggs_tomato">
+Huevos con Tomate y Queso de Cabra
+</span>
+<span class="price">6,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name" data-i18n="khlii">
+Khlii con Huevos
+</span>
+<span class="price">8,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name">
+<span data-i18n="harcha_topping">Harcha con Topping</span>
+<span class="item-description" data-i18n="includes_tea_coffee">
+Incluye té marroquí o café.
+</span>
+</span>
+<span class="price">4,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name">
+<span data-i18n="msemen_topping">Msemen con Topping</span>
+<span class="item-description" data-i18n="includes_tea_coffee">
+Incluye té marroquí o café.
+</span>
+</span>
+<span class="price">4,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name">
+<span data-i18n="baghrir_topping">Baghrir con Topping</span>
+<span class="item-description" data-i18n="includes_tea_coffee">
+Incluye té marroquí o café.
+</span>
+</span>
+<span class="price">4,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name" data-i18n="oatmeal">
+Avena con Leche, Fruta, Frutos Secos y Miel
+</span>
+<span class="price">6,00 €</span>
+</div>
+
+</section>
+
+
+<!-- ENTRANTES -->
+
+<section class="category">
+
+<h2 class="category-title">
+🥗 <span data-i18n="starters">
+ENTRANTES ÁRABES Y ENSALADAS
+</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="harira">Harira Marroquí</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="seafood_soup">Sopa de Marisco</span><span class="price">5,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="falafel">Falafel</span><span class="price">6,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="taktouka">Taktouka</span><span class="price">5,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="hummus">Hummus</span><span class="price">5,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="zaalouk">Zaalouk</span><span class="price">5,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="zucchini">Carpaccio de Calabacín</span><span class="price">6,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="maakouda">Maakouda</span><span class="price">6,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="chicken_pastilla">Pastela de Pollo</span><span class="price">5,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="fish_pastilla">Pastela de Pescado</span><span class="price">6,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="briouates">Briouates con Salsa</span><span class="price">6,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="saffa">Saffa Marroquí</span><span class="price">6,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="salmon_salad">Ensalada de Salmón</span><span class="price">6,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="rice_salad">Ensalada de Arroz</span><span class="price">5,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="moroccan_salad">Ensalada Marroquí</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="goat_salad">Ensalada de Cabra</span><span class="price">5,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="octopus_salad">Ensalada de Pulpo</span><span class="price">8,00 €</span></div>
+
+</section>
+
+
+<!-- NACHOS -->
+
+<section class="category">
+
+<h2 class="category-title">
+🧀 <span data-i18n="nachos">NACHOS</span>
+</h2>
+
+<div class="item">
+<span class="item-name" data-i18n="nachos_guacamole">
+Nachos con Guacamole
+</span>
+<span class="price">7,00 €</span>
+</div>
+
+<div class="item">
+<span class="item-name" data-i18n="nachos_meat">
+Nachos con Carne Picada y Salsa de Queso
+</span>
+<span class="price">9,00 €</span>
+</div>
+
+</section>
+
+
+<!-- TAJINES -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍲 <span data-i18n="tajines">TAJINES MARROQUÍES</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="beef_prunes">Tajín de Ternera con Ciruelas</span><span class="price">10,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="lamb_tagine">Tajín de Cordero</span><span class="price">14,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="chicken_daghmira">Tajín de Pollo con Daghmira</span><span class="price">9,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="kefta_egg">Tajín de Kefta con Huevo</span><span class="price">9,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="prawn_tagine">Tajín de Gambas</span><span class="price">11,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="tanjia">Tanjia Marrakchia al Carbón</span><span class="price">14,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="rfissa">Rfissa</span><span class="price">10,00 €</span></div>
+
+</section>
+
+
+<!-- CUSCUS -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍚 <span data-i18n="couscous">CUSCÚS MARROQUÍ</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="vegetable_couscous">Cuscús de Verduras</span><span class="price">8,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="beef_couscous">Cuscús de Ternera</span><span class="price">10,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="lamb_couscous">Cuscús de Cordero</span><span class="price">14,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="chicken_couscous">Cuscús de Pollo</span><span class="price">9,50 €</span></div>
+
+</section>
+
+
+<!-- PESCADOS -->
+
+<section class="category">
+
+<h2 class="category-title">
+🐟 <span data-i18n="fish">PESCADOS</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="mixed_fish">Fritura de Pescado Mixta</span><span class="price">17,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="fish_paella">Paella de Pescado</span><span class="price">14,50 €</span></div>
+
+<div class="item">
+<span class="item-name">
+<span data-i18n="seafood_bucket">Cubo de Felicidad de Marisco</span>
+<span class="item-description" data-i18n="white_or_tomato">
+Salsa blanca o salsa de tomate.
+</span>
+</span>
+<span class="price">19,50 €</span>
+</div>
+
+<div class="item">
+<span class="item-name">
+<span data-i18n="seafood_casserole">Cazuela de Marisco</span>
+<span class="item-description" data-i18n="one_person_sauce">
+Para 1 persona · Salsa blanca o salsa de tomate.
+</span>
+</span>
+<span class="price">12,50 €</span>
+</div>
+
+<div class="item"><span class="item-name" data-i18n="fried_calamari">Calamar Frito</span><span class="price">11,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="grilled_calamari">Calamares a la Plancha</span><span class="price">11,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="marinara_mussels">Mejillones a la Marinera</span><span class="price">11,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="garlic_mussels">Mejillones al Ajillo</span><span class="price">11,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="razor_clams">Navajas</span><span class="price">9,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="anchovies">Boquerones</span><span class="price">7,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="grilled_seabream">Dorada a la Plancha</span><span class="price">12,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="salt_seabream">Dorada a la Sal</span><span class="price">15,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="grilled_seabass">Lubina a la Plancha</span><span class="price">12,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="salt_seabass">Lubina a la Sal</span><span class="price">16,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="salmon">Salmón</span><span class="price">13,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="sole">Lenguado</span><span class="price">12,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="grilled_octopus">Pulpo a la Brasa</span><span class="price">13,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="fish_cocktail">Cóctel de Pescado de La Casa del Rif</span><span class="price">17,00 €</span></div>
+
+<p class="category-note" data-i18n="fresh_fish">
+Pescados frescos según el día.
+</p>
+
+</section>
+
+
+<!-- CARNES -->
+
+<section class="category">
+
+<h2 class="category-title">
+🔥 <span data-i18n="meats">PINCHITOS Y CARNES</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="minced_skewers">Pinchitos de Carne Picada</span><span class="price">11,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="chicken_skewers">Pinchitos de Pollo</span><span class="price">10,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="mixed_skewers">Pinchitos Mixtos</span><span class="price">11,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="lamb_skewers">Pinchitos de Cordero</span><span class="price">9,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="liver_skewers">Pinchitos de Hígado</span><span class="price">9,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="ribs">Costillas</span><span class="price">15,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="entrecote">Entrecot</span><span class="price">14,50 €</span></div>
+<div class="item"><span class="item-name">Crispy</span><span class="price">12,00 €</span></div>
+<div class="item"><span class="item-name">Cordon Bleu</span><span class="price">12,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="chicken_mushroom">Plato de Pollo con Salsa de Champiñones</span><span class="price">12,00 €</span></div>
+
+</section>
+
+
+<!-- TACOS -->
+
+<section class="category">
+
+<h2 class="category-title">
+🌮 <span data-i18n="tacos">TACOS</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="meat_tacos">Tacos de Carne Picada</span><span class="price">8,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="chicken_tacos">Tacos de Pollo</span><span class="price">7,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="mixed_tacos">Tacos Mixtos</span><span class="price">7,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="fish_tacos">Tacos de Pescado</span><span class="price">10,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="crispy_tacos">Tacos Crispy</span><span class="price">9,00 €</span></div>
+<div class="item"><span class="item-name">Tacos XL</span><span class="price">11,50 €</span></div>
+<div class="item"><span class="item-name">Tacos La Casa del Rif</span><span class="price">13,00 €</span></div>
+
+<p class="category-note" data-i18n="gratin">
+Opción gratinada al horno: +0,50 €
+</p>
+
+</section>
+
+
+<!-- HAMBURGUESAS -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍔 <span data-i18n="burgers">HAMBURGUESAS</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="beef_burger">Hamburguesa de Ternera</span><span class="price">7,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="chicken_burger">Hamburguesa de Pollo</span><span class="price">7,00 €</span></div>
+<div class="item"><span class="item-name">Hamburguesa Crispy</span><span class="price">8,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="double_burger">Hamburguesa Doble</span><span class="price">11,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="fish_burger">Hamburguesa de Pescado</span><span class="price">8,00 €</span></div>
+<div class="item"><span class="item-name">Hamburguesa La Casa del Rif</span><span class="price">11,00 €</span></div>
+
+</section>
+
+
+<!-- KIDS -->
+
+<section class="category">
+
+<h2 class="category-title">
+👧 <span data-i18n="kids">MENÚ INFANTIL</span>
+</h2>
+
+<div class="item">
+<span class="item-name" data-i18n="mini_burger">
+Mini Burger (solo carne) + Patatas Fritas
+</span>
+<span class="price">6,00 €</span>
+</div>
+
+<div class="item">
+<span class="item-name">Nuggets + Spaghetti</span>
+<span class="price">6,00 €</span>
+</div>
+
+</section>
+
+
+<!-- BOCADILLOS -->
+
+<section class="category">
+
+<h2 class="category-title">
+🥖 <span data-i18n="sandwiches">BOCADILLOS</span>
+</h2>
+
+<p class="category-note" data-i18n="charcoal_bread">
+Pan casero elaborado al carbón.
+</p>
+
+<div class="item"><span class="item-name" data-i18n="chicken_sandwich">Bocadillo de Pollo</span><span class="price">6,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="minced_sandwich">Bocadillo de Carne Picada</span><span class="price">7,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="mixed_sandwich">Bocadillo Mixto</span><span class="price">7,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="prawn_sandwich">Bocadillo de Gambas</span><span class="price">8,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="calamari_sandwich">Bocadillo de Calamar</span><span class="price">8,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="fish_sandwich">Bocadillo de Pescado</span><span class="price">7,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="red_chicken_sandwich">Bocadillo de Pollo Rojo</span><span class="price">8,00 €</span></div>
+<div class="item"><span class="item-name">Bocadillo Crispy</span><span class="price">8,00 €</span></div>
+<div class="item"><span class="item-name">Bocadillo de Merguez</span><span class="price">7,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="liver_sandwich">Bocadillo de Hígado</span><span class="price">7,00 €</span></div>
+
+</section>
+
+
+<!-- PIZZAS -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍕 <span data-i18n="pizzas">PIZZAS</span>
+</h2>
+
+<div class="item"><span class="item-name">Pizza Margarita</span><span class="price">7,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="four_cheese">Pizza Cuatro Quesos</span><span class="price">9,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="seafood_pizza">Pizza de Marisco</span><span class="price">12,00 €</span></div>
+<div class="item"><span class="item-name">Pizza Pesto</span><span class="price">10,50 €</span></div>
+<div class="item"><span class="item-name">Pizza de Salmón</span><span class="price">11,00 €</span></div>
+<div class="item"><span class="item-name">Pizza de Atún</span><span class="price">8,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="vegetable_pizza">Pizza de Verduras</span><span class="price">8,00 €</span></div>
+<div class="item"><span class="item-name">Pizza Napolitana</span><span class="price">10,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="three_meat_pizza">Pizza de Tres Carnes</span><span class="price">10,00 €</span></div>
+
+</section>
+
+
+<!-- PASTA -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍝 <span data-i18n="pasta">PASTA</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="chicken_pasta">Pasta de Pollo y Champiñones</span><span class="price">9,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="prawn_pasta">Pasta de Gambas y Tomate</span><span class="price">10,00 €</span></div>
+<div class="item"><span class="item-name">Pasticcio</span><span class="price">9,00 €</span></div>
+
+</section>
+
+
+<!-- POSTRES MARROQUIES -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍰 <span data-i18n="moroccan_desserts">
+POSTRES MARROQUÍES
+</span>
+</h2>
+
+<div class="item"><span class="item-name">Msemen</span><span class="price">2,00 €</span></div>
+<div class="item"><span class="item-name">Harcha</span><span class="price">2,00 €</span></div>
+<div class="item"><span class="item-name">Baghrir</span><span class="price">2,00 €</span></div>
+<div class="item"><span class="item-name">Basbousa</span><span class="price">3,00 €</span></div>
+<div class="item"><span class="item-name">Kunafa</span><span class="price">4,00 €</span></div>
+
+<div class="item">
+<span class="item-name" data-i18n="assorted_sweets">
+Dulces Marroquíes Variados
+</span>
+<span class="price"></span>
+</div>
+
+</section>
+
+
+<!-- POSTRES -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍰 <span data-i18n="desserts_pastries">
+POSTRES Y PASTELERÍA
+</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="lemon_cheesecake">Cheesecake de Limón</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="pistachio_cheesecake">Cheesecake de Pistacho</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="raspberry_cheesecake">Cheesecake de Frambuesa</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name">Tiramisú</span><span class="price">3,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="lotus_cake">Tarta de Lotus</span><span class="price">3,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="chocolate_cake">Tarta de Chocolate</span><span class="price">3,50 €</span></div>
+<div class="item"><span class="item-name">Jouara</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="ice_cream">Bolas de Helado</span><span class="price">2,50 €</span></div>
+
+</section>
+
+
+<!-- SPECIAL -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍮 <span data-i18n="special">
+POSTRES Y BEBIDAS ESPECIALES
+</span>
+</h2>
+
+<div class="item"><span class="item-name">Flan</span><span class="price">2,00 €</span></div>
+<div class="item"><span class="item-name">Muhallebi</span><span class="price">2,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="avocado_smoothie">Batido de Aguacate</span><span class="price">3,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="banana_smoothie">Batido de Plátano</span><span class="price">3,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="fruit_smoothie">Batido de Frutas</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="mango_smoothie">Batido de Mango</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="orange_juice">Zumo de Naranja Natural</span><span class="price">4,00 €</span></div>
+<div class="item"><span class="item-name">ZaaZaa</span><span class="price">5,00 €</span></div>
+
+</section>
+
+
+<!-- CAFE -->
+
+<section class="category">
+
+<h2 class="category-title">
+☕ <span data-i18n="coffee_tea">
+CAFÉ Y TÉ
+</span>
+</h2>
+
+<div class="item"><span class="item-name" data-i18n="espresso">Café Solo</span><span class="price">1,50 €</span></div>
+<div class="item"><span class="item-name">Cortado</span><span class="price">1,70 €</span></div>
+<div class="item"><span class="item-name" data-i18n="coffee_milk">Café con Leche</span><span class="price">1,80 €</span></div>
+<div class="item"><span class="item-name">Americano</span><span class="price">1,90 €</span></div>
+<div class="item"><span class="item-name">Cappuccino</span><span class="price">2,30 €</span></div>
+<div class="item"><span class="item-name">Latte</span><span class="price">5,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="moroccan_tea">Té Marroquí</span><span class="price">1,80 €</span></div>
+<div class="item"><span class="item-name" data-i18n="teapot_one">Tetera para 1 Persona</span><span class="price">2,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="teapot_two">Tetera para 2 Personas</span><span class="price">3,50 €</span></div>
+<div class="item"><span class="item-name" data-i18n="orange_blossom">Té de Azahar</span><span class="price">2,00 €</span></div>
+<div class="item"><span class="item-name">Poleo</span><span class="price">2,00 €</span></div>
+
+</section>
+
+
+<!-- BEBIDAS -->
+
+<section class="category">
+
+<h2 class="category-title">
+🍹 <span data-i18n="drinks">BEBIDAS</span>
+</h2>
+
+<p class="category-note" data-i18n="non_alcoholic">
+TODO SIN ALCOHOL
+</p>
+
+<div class="item"><span class="item-name" data-i18n="classic_mojito">Mojito Clásico</span><span class="price">6,00 €</span></div>
+<div class="item"><span class="item-name" data-i18n="blue_mojito">Mojito Blue</span><span class="price">6,50 €</span></div>
+<div class="item"><span class="item-name">Piña Colada</span><span class="price">7,00 €</span></div>
+<div class="item"><span class="item-name">Matcha Iced Tea</span><span class="price">6,50 €</span></div>
+<div class="item"><span class="item-name">Caramel Macchiato</span><span class="price">7,00 €</span></div>
+<div class="item"><span class="item-name">San Francisco</span><span class="price">6,50 €</span></div>
+
+</section>
 
 </main>
 
+
 <footer>
-  <p>© 2026 La Casa del Rif</p>
-  <a class="back-home" href="index.html">← Volver al inicio</a>
+
+<p>© 2026 La Casa del Rif</p>
+
+<a
+  class="back-home"
+  href="index.html"
+  data-i18n="back_home">
+← Volver al inicio
+</a>
+
 </footer>
+
+
+<script>
+
+const translations = {
+
+es: {
+
+menu_title:"MENÚ",
+menu_subtitle:"De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.",
+
+breakfast:"DESAYUNOS",
+starters:"ENTRANTES ÁRABES Y ENSALADAS",
+nachos:"NACHOS",
+tajines:"TAJINES MARROQUÍES",
+couscous:"CUSCÚS MARROQUÍ",
+fish:"PESCADOS",
+meats:"PINCHITOS Y CARNES",
+tacos:"TACOS",
+burgers:"HAMBURGUESAS",
+kids:"MENÚ INFANTIL",
+sandwiches:"BOCADILLOS",
+pizzas:"PIZZAS",
+pasta:"PASTA",
+moroccan_desserts:"POSTRES MARROQUÍES",
+desserts_pastries:"POSTRES Y PASTELERÍA",
+special:"POSTRES Y BEBIDAS ESPECIALES",
+coffee_tea:"CAFÉ Y TÉ",
+drinks:"BEBIDAS",
+
+toast_avocado:"Tostada de Aguacate y Salmón",
+toast_egg:"Tostada de Huevo y Mortadela",
+toast_tuna:"Tostada de Atún y Queso",
+bread_tomato:"Pan con Tomate",
+moroccan_breakfast:"Plato de Desayuno Marroquí",
+moroccan_breakfast_desc:"Huevos, queso, aceitunas, aceite de oliva, miel, pan casero y té marroquí.",
+egg_plate:"Plato de Huevos",
+eggs_tomato:"Huevos con Tomate y Queso de Cabra",
+khlii:"Khlii con Huevos",
+harcha_topping:"Harcha con Topping",
+msemen_topping:"Msemen con Topping",
+baghrir_topping:"Baghrir con Topping",
+oatmeal:"Avena con Leche, Fruta, Frutos Secos y Miel",
+
+harira:"Harira Marroquí",
+seafood_soup:"Sopa de Marisco",
+falafel:"Falafel",
+taktouka:"Taktouka",
+hummus:"Hummus",
+zaalouk:"Zaalouk",
+zucchini:"Carpaccio de Calabacín",
+maakouda:"Maakouda",
+chicken_pastilla:"Pastela de Pollo",
+fish_pastilla:"Pastela de Pescado",
+briouates:"Briouates con Salsa",
+saffa:"Saffa Marroquí",
+salmon_salad:"Ensalada de Salmón",
+rice_salad:"Ensalada de Arroz",
+moroccan_salad:"Ensalada Marroquí",
+goat_salad:"Ensalada de Cabra",
+octopus_salad:"Ensalada de Pulpo",
+
+nachos_guacamole:"Nachos con Guacamole",
+nachos_meat:"Nachos con Carne Picada y Salsa de Queso",
+
+beef_prunes:"Tajín de Ternera con Ciruelas",
+lamb_tagine:"Tajín de Cordero",
+chicken_daghmira:"Tajín de Pollo con Daghmira",
+kefta_egg:"Tajín de Kefta con Huevo",
+prawn_tagine:"Tajín de Gambas",
+tanjia:"Tanjia Marrakchia al Carbón",
+rfissa:"Rfissa",
+
+vegetable_couscous:"Cuscús de Verduras",
+beef_couscous:"Cuscús de Ternera",
+lamb_couscous:"Cuscús de Cordero",
+chicken_couscous:"Cuscús de Pollo",
+
+mixed_fish:"Fritura de Pescado Mixta",
+fish_paella:"Paella de Pescado",
+seafood_bucket:"Cubo de Felicidad de Marisco",
+seafood_casserole:"Cazuela de Marisco",
+white_or_tomato:"Salsa blanca o salsa de tomate.",
+one_person_sauce:"Para 1 persona · Salsa blanca o salsa de tomate.",
+fried_calamari:"Calamar Frito",
+grilled_calamari:"Calamares a la Plancha",
+marinara_mussels:"Mejillones a la Marinera",
+garlic_mussels:"Mejillones al Ajillo",
+razor_clams:"Navajas",
+anchovies:"Boquerones",
+grilled_seabream:"Dorada a la Plancha",
+salt_seabream:"Dorada a la Sal",
+grilled_seabass:"Lubina a la Plancha",
+salt_seabass:"Lubina a la Sal",
+salmon:"Salmón",
+sole:"Lenguado",
+grilled_octopus:"Pulpo a la Brasa",
+fish_cocktail:"Cóctel de Pescado de La Casa del Rif",
+fresh_fish:"Pescados frescos según el día.",
+
+minced_skewers:"Pinchitos de Carne Picada",
+chicken_skewers:"Pinchitos de Pollo",
+mixed_skewers:"Pinchitos Mixtos",
+lamb_skewers:"Pinchitos de Cordero",
+liver_skewers:"Pinchitos de Hígado",
+ribs:"Costillas",
+entrecote:"Entrecot",
+chicken_mushroom:"Plato de Pollo con Salsa de Champiñones",
+
+meat_tacos:"Tacos de Carne Picada",
+chicken_tacos:"Tacos de Pollo",
+mixed_tacos:"Tacos Mixtos",
+fish_tacos:"Tacos de Pescado",
+crispy_tacos:"Tacos Crispy",
+gratin:"Opción gratinada al horno: +0,50 €",
+
+beef_burger:"Hamburguesa de Ternera",
+chicken_burger:"Hamburguesa de Pollo",
+double_burger:"Hamburguesa Doble",
+fish_burger:"Hamburguesa de Pescado",
+mini_burger:"Mini Burger (solo carne) + Patatas Fritas",
+
+charcoal_bread:"Pan casero elaborado al carbón.",
+chicken_sandwich:"Bocadillo de Pollo",
+minced_sandwich:"Bocadillo de Carne Picada",
+mixed_sandwich:"Bocadillo Mixto",
+prawn_sandwich:"Bocadillo de Gambas",
+calamari_sandwich:"Bocadillo de Calamar",
+fish_sandwich:"Bocadillo de Pescado",
+red_chicken_sandwich:"Bocadillo de Pollo Rojo",
+liver_sandwich:"Bocadillo de Hígado",
+
+four_cheese:"Pizza Cuatro Quesos",
+seafood_pizza:"Pizza de Marisco",
+vegetable_pizza:"Pizza de Verduras",
+three_meat_pizza:"Pizza de Tres Carnes",
+
+chicken_pasta:"Pasta de Pollo y Champiñones",
+prawn_pasta:"Pasta de Gambas y Tomate",
+
+assorted_sweets:"Dulces Marroquíes Variados",
+lemon_cheesecake:"Cheesecake de Limón",
+pistachio_cheesecake:"Cheesecake de Pistacho",
+raspberry_cheesecake:"Cheesecake de Frambuesa",
+lotus_cake:"Tarta de Lotus",
+chocolate_cake:"Tarta de Chocolate",
+ice_cream:"Bolas de Helado",
+
+avocado_smoothie:"Batido de Aguacate",
+banana_smoothie:"Batido de Plátano",
+fruit_smoothie:"Batido de Frutas",
+mango_smoothie:"Batido de Mango",
+orange_juice:"Zumo de Naranja Natural",
+
+espresso:"Café Solo",
+coffee_milk:"Café con Leche",
+moroccan_tea:"Té Marroquí",
+teapot_one:"Tetera para 1 Persona",
+teapot_two:"Tetera para 2 Personas",
+orange_blossom:"Té de Azahar",
+
+non_alcoholic:"TODO SIN ALCOHOL",
+classic_mojito:"Mojito Clásico",
+blue_mojito:"Mojito Blue",
+
+includes_tea_coffee:"Incluye té marroquí o café.",
+
+back_home:"← Volver al inicio"
+
+},
+
+
+ar: {
+
+menu_title:"القائمة",
+menu_subtitle:"من مطبخنا إلى مائدتكم، مع المذاق الأصيل للمغرب.",
+
+breakfast:"الفطور",
+starters:"المقبلات العربية والسلطات",
+nachos:"ناتشوز",
+tajines:"الطواجن المغربية",
+couscous:"الكسكس المغربي",
+fish:"الأسماك",
+meats:"المشاوي واللحوم",
+tacos:"تاكوس",
+burgers:"البرغر",
+kids:"قائمة الأطفال",
+sandwiches:"الساندويتشات",
+pizzas:"البيتزا",
+pasta:"الباستا",
+moroccan_desserts:"الحلويات المغربية",
+desserts_pastries:"الحلويات والمعجنات",
+special:"الحلويات والمشروبات الخاصة",
+coffee_tea:"القهوة والشاي",
+drinks:"المشروبات",
+
+toast_avocado:"توست بالأفوكادو والسلمون",
+toast_egg:"توست بالبيض والمرتديلا",
+toast_tuna:"توست بالتونة والجبن",
+bread_tomato:"خبز بالطماطم",
+moroccan_breakfast:"طبق الفطور المغربي",
+moroccan_breakfast_desc:"بيض، جبن، زيتون، زيت الزيتون، عسل، خبز منزلي وشاي مغربي.",
+egg_plate:"طبق البيض",
+eggs_tomato:"بيض بالطماطم وجبن الماعز",
+khlii:"الخليع بالبيض",
+harcha_topping:"حرشة مع الإضافات",
+msemen_topping:"مسمن مع الإضافات",
+baghrir_topping:"بغرير مع الإضافات",
+oatmeal:"شوفان بالحليب والفواكه والمكسرات والعسل",
+
+harira:"حريرة مغربية",
+seafood_soup:"حساء المأكولات البحرية",
+falafel:"فلافل",
+taktouka:"تكتوكة",
+hummus:"حمص",
+zaalouk:"زعلوك",
+zucchini:"كارباتشيو الكوسا",
+maakouda:"معقودة",
+chicken_pastilla:"بسطيلة بالدجاج",
+fish_pastilla:"بسطيلة بالسمك",
+briouates:"بريوات مع الصلصة",
+saffa:"سفة مغربية",
+salmon_salad:"سلطة السلمون",
+rice_salad:"سلطة الأرز",
+moroccan_salad:"سلطة مغربية",
+goat_salad:"سلطة جبن الماعز",
+octopus_salad:"سلطة الأخطبوط",
+
+nachos_guacamole:"ناتشوز مع الغواكامولي",
+nachos_meat:"ناتشوز باللحم المفروم وصلصة الجبن",
+
+beef_prunes:"طاجين اللحم بالبرقوق",
+lamb_tagine:"طاجين لحم الضأن",
+chicken_daghmira:"طاجين الدجاج بالدغميرة",
+kefta_egg:"طاجين الكفتة بالبيض",
+prawn_tagine:"طاجين القمرون",
+tanjia:"طنجية مراكشية على الفحم",
+rfissa:"رفيسة",
+
+vegetable_couscous:"كسكس بالخضر",
+beef_couscous:"كسكس باللحم",
+lamb_couscous:"كسكس بلحم الضأن",
+chicken_couscous:"كسكس بالدجاج",
+
+mixed_fish:"قلي السمك المشكل",
+fish_paella:"باييلا السمك",
+seafood_bucket:"دلو السعادة بالمأكولات البحرية",
+seafood_casserole:"طاجن المأكولات البحرية",
+white_or_tomato:"صلصة بيضاء أو صلصة الطماطم.",
+one_person_sauce:"لشخص واحد · صلصة بيضاء أو صلصة الطماطم.",
+fried_calamari:"حبار مقلي",
+grilled_calamari:"حبار مشوي",
+marinara_mussels:"بلح البحر على طريقة المارينارا",
+garlic_mussels:"بلح البحر بالثوم",
+razor_clams:"محار السكين",
+anchovies:"أنشوفة",
+grilled_seabream:"دنيس مشوي",
+salt_seabream:"دنيس بالملح",
+grilled_seabass:"قاروص مشوي",
+salt_seabass:"قاروص بالملح",
+salmon:"سلمون",
+sole:"سمك موسى",
+grilled_octopus:"أخطبوط مشوي على الفحم",
+fish_cocktail:"كوكتيل السمك الخاص بـ La Casa del Rif",
+fresh_fish:"الأسماك الطازجة حسب المتوفر يومياً.",
+
+minced_skewers:"شيش اللحم المفروم",
+chicken_skewers:"شيش الدجاج",
+mixed_skewers:"شيش مشكل",
+lamb_skewers:"شيش لحم الضأن",
+liver_skewers:"شيش الكبد",
+ribs:"ضلوع",
+entrecote:"إنتريكوت",
+chicken_mushroom:"طبق الدجاج بصلصة الفطر",
+
+meat_tacos:"تاكوس باللحم المفروم",
+chicken_tacos:"تاكوس بالدجاج",
+mixed_tacos:"تاكوس مشكل",
+fish_tacos:"تاكوس بالسمك",
+crispy_tacos:"تاكوس كريسبي",
+gratin:"إمكانية الغراتان في الفرن: +0,50 €",
+
+beef_burger:"برغر اللحم",
+chicken_burger:"برغر الدجاج",
+double_burger:"برغر مزدوج",
+fish_burger:"برغر السمك",
+mini_burger:"ميني برغر (لحم فقط) + بطاطس مقلية",
+
+charcoal_bread:"خبز منزلي محضر على الفحم.",
+chicken_sandwich:"ساندويتش الدجاج",
+minced_sandwich:"ساندويتش اللحم المفروم",
+mixed_sandwich:"ساندويتش مشكل",
+prawn_sandwich:"ساندويتش القمرون",
+calamari_sandwich:"ساندويتش الحبار",
+fish_sandwich:"ساندويتش السمك",
+red_chicken_sandwich:"ساندويتش الدجاج الأحمر",
+liver_sandwich:"ساندويتش الكبد",
+
+four_cheese:"بيتزا أربعة أجبان",
+seafood_pizza:"بيتزا المأكولات البحرية",
+vegetable_pizza:"بيتزا الخضر",
+three_meat_pizza:"بيتزا ثلاثة أنواع من اللحوم",
+
+chicken_pasta:"باستا بالدجاج والفطر",
+prawn_pasta:"باستا بالقمرون والطماطم",
+
+assorted_sweets:"حلويات مغربية متنوعة",
+lemon_cheesecake:"تشيزكيك بالليمون",
+pistachio_cheesecake:"تشيزكيك بالفستق",
+raspberry_cheesecake:"تشيزكيك بالتوت",
+lotus_cake:"كيكة اللوتس",
+chocolate_cake:"كيكة الشوكولاتة",
+ice_cream:"كرات الآيس كريم",
+
+avocado_smoothie:"ميلك شيك الأفوكادو",
+banana_smoothie:"ميلك شيك الموز",
+fruit_smoothie:"ميلك شيك الفواكه",
+mango_smoothie:"ميلك شيك المانجو",
+orange_juice:"عصير برتقال طبيعي",
+
+espresso:"قهوة إسبريسو",
+coffee_milk:"قهوة بالحليب",
+moroccan_tea:"شاي مغربي",
+teapot_one:"براد شاي لشخص واحد",
+teapot_two:"براد شاي لشخصين",
+orange_blossom:"شاي الزهر",
+
+non_alcoholic:"جميع المشروبات بدون كحول",
+classic_mojito:"موهيتو كلاسيكي",
+blue_mojito:"موهيتو أزرق",
+
+includes_tea_coffee:"يشمل الشاي المغربي أو القهوة.",
+
+back_home:"← العودة إلى الرئيسية"
+
+},
+
+
+en: {
+
+menu_title:"MENU",
+menu_subtitle:"From our kitchen to your table, with the authentic taste of Morocco.",
+
+breakfast:"BREAKFAST",
+starters:"ARABIC STARTERS & SALADS",
+nachos:"NACHOS",
+tajines:"MOROCCAN TAGINES",
+couscous:"MOROCCAN COUSCOUS",
+fish:"FISH",
+meats:"SKEWERS & MEATS",
+tacos:"TACOS",
+burgers:"BURGERS",
+kids:"KIDS MENU",
+sandwiches:"SANDWICHES",
+pizzas:"PIZZAS",
+pasta:"PASTA",
+moroccan_desserts:"MOROCCAN DESSERTS",
+desserts_pastries:"DESSERTS & PASTRIES",
+special:"SPECIAL DESSERTS & DRINKS",
+coffee_tea:"COFFEE & TEA",
+drinks:"DRINKS",
+
+toast_avocado:"Avocado & Salmon Toast",
+toast_egg:"Egg & Mortadella Toast",
+toast_tuna:"Tuna & Cheese Toast",
+bread_tomato:"Bread with Tomato",
+moroccan_breakfast:"Moroccan Breakfast Plate",
+moroccan_breakfast_desc:"Eggs, cheese, olives, olive oil, honey, homemade bread and Moroccan tea.",
+egg_plate:"Egg Plate",
+eggs_tomato:"Eggs with Tomato & Goat Cheese",
+khlii:"Khlii with Eggs",
+harcha_topping:"Harcha with Topping",
+msemen_topping:"Msemen with Topping",
+baghrir_topping:"Baghrir with Topping",
+oatmeal:"Oatmeal with Milk, Fruit, Nuts & Honey",
+
+harira:"Moroccan Harira",
+seafood_soup:"Seafood Soup",
+falafel:"Falafel",
+taktouka:"Taktouka",
+hummus:"Hummus",
+zaalouk:"Zaalouk",
+zucchini:"Zucchini Carpaccio",
+maakouda:"Maakouda",
+chicken_pastilla:"Chicken Pastilla",
+fish_pastilla:"Fish Pastilla",
+briouates:"Briouates with Sauce",
+saffa:"Moroccan Saffa",
+salmon_salad:"Salmon Salad",
+rice_salad:"Rice Salad",
+moroccan_salad:"Moroccan Salad",
+goat_salad:"Goat Cheese Salad",
+octopus_salad:"Octopus Salad",
+
+nachos_guacamole:"Nachos with Guacamole",
+nachos_meat:"Nachos with Minced Meat & Cheese Sauce",
+
+beef_prunes:"Beef Tagine with Prunes",
+lamb_tagine:"Lamb Tagine",
+chicken_daghmira:"Chicken Tagine with Daghmira",
+kefta_egg:"Kefta Tagine with Egg",
+prawn_tagine:"Prawn Tagine",
+tanjia:"Marrakchi Tanjia on Charcoal",
+rfissa:"Rfissa",
+
+vegetable_couscous:"Vegetable Couscous",
+beef_couscous:"Beef Couscous",
+lamb_couscous:"Lamb Couscous",
+chicken_couscous:"Chicken Couscous",
+
+mixed_fish:"Mixed Fried Fish",
+fish_paella:"Fish Paella",
+seafood_bucket:"Seafood Happiness Bucket",
+seafood_casserole:"Seafood Casserole",
+white_or_tomato:"White sauce or tomato sauce.",
+one_person_sauce:"For 1 person · White sauce or tomato sauce.",
+fried_calamari:"Fried Calamari",
+grilled_calamari:"Grilled Calamari",
+marinara_mussels:"Mussels Marinara",
+garlic_mussels:"Garlic Mussels",
+razor_clams:"Razor Clams",
+anchovies:"Anchovies",
+grilled_seabream:"Grilled Sea Bream",
+salt_seabream:"Salt-Baked Sea Bream",
+grilled_seabass:"Grilled Sea Bass",
+salt_seabass:"Salt-Baked Sea Bass",
+salmon:"Salmon",
+sole:"Sole",
+grilled_octopus:"Charcoal-Grilled Octopus",
+fish_cocktail:"La Casa del Rif Fish Cocktail",
+fresh_fish:"Fresh fish depending on the day.",
+
+minced_skewers:"Minced Meat Skewers",
+chicken_skewers:"Chicken Skewers",
+mixed_skewers:"Mixed Skewers",
+lamb_skewers:"Lamb Skewers",
+liver_skewers:"Liver Skewers",
+ribs:"Ribs",
+entrecote:"Entrecôte",
+chicken_mushroom:"Chicken with Mushroom Sauce",
+
+meat_tacos:"Minced Meat Tacos",
+chicken_tacos:"Chicken Tacos",
+mixed_tacos:"Mixed Tacos",
+fish_tacos:"Fish Tacos",
+crispy_tacos:"Crispy Tacos",
+gratin:"Oven-gratin option: +€0.50",
+
+beef_burger:"Beef Burger",
+chicken_burger:"Chicken Burger",
+double_burger:"Double Burger",
+fish_burger:"Fish Burger",
+mini_burger:"Mini Burger (meat only) + French Fries",
+
+charcoal_bread:"Homemade bread prepared over charcoal.",
+chicken_sandwich:"Chicken Sandwich",
+minced_sandwich:"Minced Meat Sandwich",
+mixed_sandwich:"Mixed Sandwich",
+prawn_sandwich:"Prawn Sandwich",
+calamari_sandwich:"Calamari Sandwich",
+fish_sandwich:"Fish Sandwich",
+red_chicken_sandwich:"Red Chicken Sandwich",
+liver_sandwich:"Liver Sandwich",
+
+four_cheese:"Four Cheese Pizza",
+seafood_pizza:"Seafood Pizza",
+vegetable_pizza:"Vegetable Pizza",
+three_meat_pizza:"Three Meat Pizza",
+
+chicken_pasta:"Chicken & Mushroom Pasta",
+prawn_pasta:"Prawn & Tomato Pasta",
+
+assorted_sweets:"Assorted Moroccan Sweets",
+lemon_cheesecake:"Lemon Cheesecake",
+pistachio_cheesecake:"Pistachio Cheesecake",
+raspberry_cheesecake:"Raspberry Cheesecake",
+lotus_cake:"Lotus Cake",
+chocolate_cake:"Chocolate Cake",
+ice_cream:"Ice Cream Scoops",
+
+avocado_smoothie:"Avocado Smoothie",
+banana_smoothie:"Banana Smoothie",
+fruit_smoothie:"Fruit Smoothie",
+mango_smoothie:"Mango Smoothie",
+orange_juice:"Fresh Orange Juice",
+
+espresso:"Espresso",
+coffee_milk:"Coffee with Milk",
+moroccan_tea:"Moroccan Tea",
+teapot_one:"Teapot for 1 Person",
+teapot_two:"Teapot for 2 People",
+orange_blossom:"Orange Blossom Tea",
+
+non_alcoholic:"ALL NON-ALCOHOLIC",
+classic_mojito:"Classic Mojito",
+blue_mojito:"Blue Mojito",
+
+includes_tea_coffee:"Includes Moroccan tea or coffee.",
+
+back_home:"← Back to home"
+
+},
+
+
+de: {
+
+menu_title:"SPEISEKARTE",
+menu_subtitle:"Von unserer Küche auf Ihren Tisch – der authentische Geschmack Marokkos.",
+
+breakfast:"FRÜHSTÜCK",
+starters:"ARABISCHE VORSPEISEN & SALATE",
+nachos:"NACHOS",
+tajines:"MAROKKANISCHE TAJINES",
+couscous:"MAROKKANISCHER COUSCOUS",
+fish:"FISCH",
+meats:"SPIESSE & FLEISCH",
+tacos:"TACOS",
+burgers:"BURGER",
+kids:"KINDER-MENÜ",
+sandwiches:"SANDWICHES",
+pizzas:"PIZZEN",
+pasta:"PASTA",
+moroccan_desserts:"MAROKKANISCHE DESSERTS",
+desserts_pastries:"DESSERTS & GEBÄCK",
+special:"BESONDERE DESSERTS & GETRÄNKE",
+coffee_tea:"KAFFEE & TEE",
+drinks:"GETRÄNKE",
+
+toast_avocado:"Avocado-Lachs-Toast",
+toast_egg:"Ei-Mortadella-Toast",
+toast_tuna:"Thunfisch-Käse-Toast",
+bread_tomato:"Brot mit Tomate",
+moroccan_breakfast:"Marokkanischer Frühstücksteller",
+moroccan_breakfast_desc:"Eier, Käse, Oliven, Olivenöl, Honig, hausgemachtes Brot und marokkanischer Tee.",
+egg_plate:"Eierteller",
+eggs_tomato:"Eier mit Tomaten und Ziegenkäse",
+khlii:"Khlii mit Eiern",
+harcha_topping:"Harcha mit Topping",
+msemen_topping:"Msemen mit Topping",
+baghrir_topping:"Baghrir mit Topping",
+oatmeal:"Haferflocken mit Milch, Obst, Nüssen und Honig",
+
+harira:"Marokkanische Harira",
+seafood_soup:"Meeresfrüchtesuppe",
+falafel:"Falafel",
+taktouka:"Taktouka",
+hummus:"Hummus",
+zaalouk:"Zaalouk",
+zucchini:"Zucchini-Carpaccio",
+maakouda:"Maakouda",
+chicken_pastilla:"Hähnchen-Pastilla",
+fish_pastilla:"Fisch-Pastilla",
+briouates:"Briouates mit Sauce",
+saffa:"Marokkanische Saffa",
+salmon_salad:"Lachssalat",
+rice_salad:"Reissalat",
+moroccan_salad:"Marokkanischer Salat",
+goat_salad:"Ziegenkäse-Salat",
+octopus_salad:"Oktopussalat",
+
+nachos_guacamole:"Nachos mit Guacamole",
+nachos_meat:"Nachos mit Hackfleisch und Käsesauce",
+
+beef_prunes:"Rindfleisch-Tajine mit Pflaumen",
+lamb_tagine:"Lamm-Tajine",
+chicken_daghmira:"Hähnchen-Tajine mit Daghmira",
+kefta_egg:"Kefta-Tajine mit Ei",
+prawn_tagine:"Garnelen-Tajine",
+tanjia:"Marrakchische Tanjia vom Holzkohlegrill",
+rfissa:"Rfissa",
+
+vegetable_couscous:"Couscous mit Gemüse",
+beef_couscous:"Couscous mit Rindfleisch",
+lamb_couscous:"Couscous mit Lammfleisch",
+chicken_couscous:"Couscous mit Hähnchen",
+
+mixed_fish:"Gemischter frittierter Fisch",
+fish_paella:"Fisch-Paella",
+seafood_bucket:"Meeresfrüchte-Glückseimer",
+seafood_casserole:"Meeresfrüchte-Auflauf",
+white_or_tomato:"Weiße Sauce oder Tomatensauce.",
+one_person_sauce:"Für 1 Person · Weiße Sauce oder Tomatensauce.",
+fried_calamari:"Frittierte Calamari",
+grilled_calamari:"Gegrillte Calamari",
+marinara_mussels:"Muscheln Marinara",
+garlic_mussels:"Muscheln mit Knoblauch",
+razor_clams:"Schwertmuscheln",
+anchovies:"Sardellen",
+grilled_seabream:"Gegrillte Dorade",
+salt_seabream:"Dorade in Salzkruste",
+grilled_seabass:"Gegrillter Wolfsbarsch",
+salt_seabass:"Wolfsbarsch in Salzkruste",
+salmon:"Lachs",
+sole:"Seezunge",
+grilled_octopus:"Oktopus vom Holzkohlegrill",
+fish_cocktail:"Fisch-Cocktail La Casa del Rif",
+fresh_fish:"Frischer Fisch je nach Tagesangebot.",
+
+minced_skewers:"Hackfleisch-Spiesse",
+chicken_skewers:"Hähnchen-Spiesse",
+mixed_skewers:"Gemischte Spiesse",
+lamb_skewers:"Lammspiesse",
+liver_skewers:"Leber-Spiesse",
+ribs:"Rippchen",
+entrecote:"Entrecôte",
+chicken_mushroom:"Hähnchenteller mit Pilzsauce",
+
+meat_tacos:"Tacos mit Hackfleisch",
+chicken_tacos:"Tacos mit Hähnchen",
+mixed_tacos:"Gemischte Tacos",
+fish_tacos:"Fisch-Tacos",
+crispy_tacos:"Crispy-Tacos",
+gratin:"Überbacken im Ofen: +0,50 €",
+
+beef_burger:"Rindfleisch-Burger",
+chicken_burger:"Hähnchen-Burger",
+double_burger:"Doppelter Burger",
+fish_burger:"Fisch-Burger",
+mini_burger:"Mini-Burger (nur Fleisch) + Pommes",
+
+charcoal_bread:"Hausgemachtes Brot über Holzkohle zubereitet.",
+chicken_sandwich:"Hähnchen-Sandwich",
+minced_sandwich:"Hackfleisch-Sandwich",
+mixed_sandwich:"Gemischtes Sandwich",
+prawn_sandwich:"Garnelen-Sandwich",
+calamari_sandwich:"Calamari-Sandwich",
+fish_sandwich:"Fisch-Sandwich",
+red_chicken_sandwich:"Rotes Hähnchen-Sandwich",
+liver_sandwich:"Leber-Sandwich",
+
+four_cheese:"Pizza Vier Käse",
+seafood_pizza:"Meeresfrüchte-Pizza",
+vegetable_pizza:"Gemüse-Pizza",
+three_meat_pizza:"Pizza mit drei Fleischsorten",
+
+chicken_pasta:"Pasta mit Hähnchen und Pilzen",
+prawn_pasta:"Pasta mit Garnelen und Tomaten",
+
+assorted_sweets:"Verschiedene marokkanische Süßigkeiten",
+lemon_cheesecake:"Zitronen-Cheesecake",
+pistachio_cheesecake:"Pistazien-Cheesecake",
+raspberry_cheesecake:"Himbeer-Cheesecake",
+lotus_cake:"Lotus-Kuchen",
+chocolate_cake:"Schokoladenkuchen",
+ice_cream:"Eiskugeln",
+
+avocado_smoothie:"Avocado-Smoothie",
+banana_smoothie:"Bananen-Smoothie",
+fruit_smoothie:"Frucht-Smoothie",
+mango_smoothie:"Mango-Smoothie",
+orange_juice:"Frischer Orangensaft",
+
+espresso:"Espresso",
+coffee_milk:"Kaffee mit Milch",
+moroccan_tea:"Marokkanischer Tee",
+teapot_one:"Teekanne für 1 Person",
+teapot_two:"Teekanne für 2 Personen",
+orange_blossom:"Orangenblütentee",
+
+non_alcoholic:"ALLE GETRÄNKE OHNE ALKOHOL",
+classic_mojito:"Klassischer Mojito",
+blue_mojito:"Blue Mojito",
+
+includes_tea_coffee:"Inklusive marokkanischem Tee oder Kaffee.",
+
+back_home:"← Zur Startseite"
+
+}
+
+};
+
+
+function changeLanguage(lang){
+
+const dictionary=translations[lang];
+
+document.documentElement.lang=lang;
+
+document.body.classList.remove("rtl","de");
+
+if(lang==="ar"){
+  document.body.classList.add("rtl");
+  document.documentElement.dir="rtl";
+}else{
+  document.documentElement.dir="ltr";
+}
+
+if(lang==="de"){
+  document.body.classList.add("de");
+}
+
+document.querySelectorAll("[data-i18n]").forEach(element=>{
+
+const key=element.getAttribute("data-i18n");
+
+if(dictionary[key]){
+  element.textContent=dictionary[key];
+}
+
+});
+
+
+document.querySelectorAll(".languages button").forEach(button=>{
+  button.classList.remove("active");
+});
+
+document.getElementById("lang-"+lang).classList.add("active");
+
+localStorage.setItem("lacasadelrif-language",lang);
+
+}
+
+
+const savedLanguage=
+localStorage.getItem("lacasadelrif-language") || "es";
+
+changeLanguage(savedLanguage);
+
+</script>
 
 </body>
 </html>

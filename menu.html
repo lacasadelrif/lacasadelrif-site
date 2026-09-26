@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú | La Casa del Rif</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f1e3;
+      color: #183b32;
+      line-height: 1.5;
+    }
+
+    header {
+      text-align: center;
+      padding: 25px 15px 15px;
+      background: #f7f1e3;
+    }
+
+    .logo {
+      width: 190px;
+      max-width: 70%;
+      height: auto;
+    }
+
+    .languages {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .languages button {
+      border: 1px solid #c7a85b;
+      background: transparent;
+      color: #183b32;
+      padding: 7px 13px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .languages button.active,
+    .languages button:hover {
+      background: #183b32;
+      color: #fff;
+    }
+
+    .menu-title {
+      text-align: center;
+      padding: 20px 15px 10px;
+    }
+
+    .menu-title h1 {
+      font-family: Georgia, serif;
+      color: #183b32;
+      font-size: 34px;
+      letter-spacing: 2px;
+    }
+
+    .menu-title p {
+      color: #9b7a32;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .container {
+      width: 94%;
+      max-width: 1000px;
+      margin: auto;
+      padding-bottom: 40px;
+    }
+
+    .category {
+      margin: 28px 0;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid #d8c58e;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(24,59,50,0.06);
+    }
+
+    .category-title {
+      text-align: center;
+      font-family: Georgia, serif;
+      color: #9b7a32;
+      font-size: 24px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d8c58e;
+    }
+
+    .category-note {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 11px 2px;
+      border-bottom: 1px dashed #d8c58e;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .item-name {
+      font-weight: 600;
+      color: #183b32;
+      flex: 1;
+    }
+
+    .item-description {
+      display: block;
+      font-size: 13px;
+      color: #777;
+      font-weight: normal;
+      margin-top: 3px;
+    }
+
+    .price {
+      color: #9b7a32;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: #183b32;
+      color: white;
+      margin-top: 30px;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 12px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #c7a85b;
+      padding: 8px 18px;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 600px) {
+
+      .logo {
+        width: 160px;
+      }
+
+      .menu-title h1 {
+        font-size: 28px;
+      }
+
+      .category {
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .category-title {
+        font-size: 21px;
+      }
+
+      .item {
+        padding: 10px 0;
+      }
+
+      .item-name {
+        font-size: 15px;
+      }
+
+      .price {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img class="logo" src="logo.png" alt="La Casa del Rif Restaurante">
+
+  <div class="languages">
+    <button class="active">ES</button>
+    <button>العربية</button>
+    <button>EN</button>
+  </div>
+</header>
+
+<div class="menu-title">
+  <h1>MENÚ</h1>
+  <p>De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.</p>
+</div>
+
+<main class="container">
+
+  <!-- DESAYUNOS -->
+  <section class="category">
+    <h2 class="category-title">☀️ DESAYUNOS</h2>
+
+    <div class="item"><span class="item-name">Tostada de Aguacate y Salmón</span><span class="price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Tostada de Huevo y Mortadela</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Tostada de Atún y Queso</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Pan con Tomate</span><span class="price">3,00 €</span></div>
+
+    <div class="item">
+      <span class="item-name">
+        Plato de Desayuno Marroquí
+        <span class="item-description">Huevos, queso, aceitunas, aceite de oliva, miel, pan casero y té marroquí.</span>
+      </span>
+      <span class="price">7,50 €</span>
+    </div>
+
+    <div class="item"><span class="item-name">Plato de Huevos</span><span class="price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Huevos con Tomate y Queso de Cabra</span><span class="price">6,50 €</span></div>
+    <div class="item"><span class="item-name">Khlii con Huevos</span><span class="price">8,50 €</span></div>
+
+    <div class="item">
+      <span class="item-name">Harcha con Topping<span class="item-description">Incluye té marroquí o café.</span></span>
+      <span class="price">4,50 €</span>
+    </div>
+
+    <div class="item">
+      <span class="item-name">Msemen con Topping<span class="item-description">Incluye té marroquí o café.</span></span>
+      <span class="price">4,50 €</span>
+    </div>
+
+    <div class="item">
+      <span class="item-name">Baghrir con Topping<span class="item-description">Incluye té marroquí o café.</span></span>
+      <span class="price">4,50 €</span>
+    </div>
+
+    <div class="item"><span class="item-name">Avena con Leche, Fruta, Frutos Secos y Miel</span><span class="price">6,00 €</span></div>
+  </section>
+
+
+  <!-- ENTRANTES -->
+  <section class="category">
+    <h2 class="category-title">🥗 ENTRANTES ÁRABES Y ENSALADAS</h2>
+
+    <div class="item"><span class="item-name">Harira Marroquí</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Sopa de Marisco</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Falafel</span><span class="price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Taktouka</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Hummus</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Zaalouk</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Carpaccio de Calabacín</span><span class="price">6,50 €</span></div>
+    <div class="item"><span class="item-name">Maakouda</span><span class="price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Pastela de Pollo</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Pastela de Pescado</span><span class="price">6,50 €</span></div>
+    <div class="item"><span class="item-name">Briouates con Salsa</span><span class="price">6,50 €</span></div>
+    <div class="item"><span class="item-name">Saffa Marroquí</span><span class="price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Ensalada de Salmón</span><span class="price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Ensalada de Arroz</span><span class="price">5,00 €</span></div>
+    <div class="item"><span class="item-name">Ensalada Marroquí</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Ensalada de Cabra</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Ensalada de Pulpo</span><span class="price">8,00 €</span></div>
+  </section>
+
+
+  <!-- NACHOS -->
+  <section class="category">
+    <h2 class="category-title">🧀 NACHOS</h2>
+
+    <div class="item"><span class="item-name">Nachos con Guacamole</span><span class="price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Nachos con Carne Picada y Salsa de Queso</span><span class="price">9,00 €</span></div>
+  </section>
+
+
+  <!-- TAJINES -->
+  <section class="category">
+    <h2 class="category-title">🍲 TAJINES MARROQUÍES</h2>
+
+    <div class="item"><span class="item-name">Tajín de Ternera con Ciruelas</span><span class="price">10,50 €</span></div>
+    <div class="item"><span class="item-name">Tajín de Cordero</span><span class="price">14,50 €</span></div>
+    <div class="item"><span class="item-name">Tajín de Pollo con Daghmira</span><span class="price">9,50 €</span></div>
+    <div class="item"><span class="item-name">Tajín de Kefta con Huevo</span><span class="price">9,50 €</span></div>
+    <div class="item"><span class="item-name">Tajín de Gambas</span><span class="price">11,50 €</span></div>
+    <div class="item"><span class="item-name">Tanjia Marrakchia al Carbón</span><span class="price">14,00 €</span></div>
+    <div class="item"><span class="item-name">Rfissa</span><span class="price">10,00 €</span></div>
+  </section>
+
+
+  <!-- CUSCUS -->
+  <section class="category">
+    <h2 class="category-title">🍚 CUSCÚS MARROQUÍ</h2>
+
+    <div class="item"><span class="item-name">Cuscús de Verduras</span><span class="price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Cuscús de Ternera</span><span class="price">10,50 €</span></div>
+    <div class="item"><span class="item-name">Cuscús de Cordero</span><span class="price">14,00 €</span></div>
+    <div class="item"><span class="item-name">Cuscús de Pollo</span><span class="price">9,50 €</span></div>
+  </section>
+
+
+  <!-- PESCADOS -->
+  <section class="category">
+    <h2 class="category-title">🐟 PESCADOS</h2>
+
+    <div class="item"><span class="item-name">Fritura de Pescado Mixta</span><span class="price">17,50 €</span></div>
+    <div class="item"><span class="item-name">Paella de Pescado</span><span class="price">14,50 €</span></div>
+
+    <div class="item">
+      <span class="item-name">Cubo de Felicidad de Marisco<span class="item-description">Salsa blanca o salsa de tomate.</span></span>
+      <span class="price">19,50 €</span>
+    </div>
+
+    <div class="item">
+      <span class="item-name">Cazuela de Marisco<span class="item-description">Para 1 persona · Salsa blanca o salsa de tomate.</span></span>
+      <span class="price">12,50 €</span>
+    </div>
+
+    <div class="item"><span class="item-name">Calamar Frito</span><span class="price">11,00 €</span></div>
+    <div class="item"><span class="item-name">Calamares a la Plancha</span><span class="price">11,50 €</span></div>
+    <div class="item"><span class="item-name">Mejillones a la Marinera</span><span class="price">11,50 €</span></div>
+    <div class="item"><span class="item-name">Mejillones al Ajillo</span><span class="price">11,50 €</span></div>
+    <div class="item"><span class="item-name">Navajas</span><span class="price">9,00 €</span></div>
+    <div class="item"><span class="item-name">Boquerones</span><span class="price">7,50 €</span></div>
+    <div class="item"><span class="item-name">Dorada a la Plancha</span><span class="price">12,00 €</span></div>
+    <div class="item"><span class="item-name">Dorada a la Sal</span><span class="price">15,50 €</span></div>
+    <div class="item"><span class="item-name">Lubina a la Plancha</span><span class="price">12,00 €</span></div>
+    <div class="item"><span class="item-name">Lubina a la Sal</span><span class="price">16,00 €</span></div>
+    <div class="item"><span class="item-name">Salmón</span><span class="price">13,00 €</span></div>
+    <div class="item"><span class="item-name">Lenguado</span><span class="price">12,50 €</span></div>
+    <div class="item"><span class="item-name">Pulpo a la Brasa</span><span class="price">13,50 €</span></div>
+    <div class="item"><span class="item-name">Cóctel de Pescado de La Casa del Rif</span><span class="price">17,00 €</span></div>
+
+    <p class="category-note">Pescados frescos según el día.</p>
+  </section>
+
+
+  <!-- CARNES -->
+  <section class="category">
+    <h2 class="category-title">🔥 PINCHITOS Y CARNES</h2>
+
+    <div class="item"><span class="item-name">Pinchitos de Carne Picada</span><span class="price">11,00 €</span></div>
+    <div class="item"><span class="item-name">Pinchitos de Pollo</span><span class="price">10,50 €</span></div>
+    <div class="item"><span class="item-name">Pinchitos Mixtos</span><span class="price">11,00 €</span></div>
+    <div class="item"><span class="item-name">Pinchitos de Cordero</span><span class="price">9,50 €</span></div>
+    <div class="item"><span class="item-name">Pinchitos de Hígado</span><span class="price">9,50 €</span></div>
+    <div class="item"><span class="item-name">Costillas</span><span class="price">15,50 €</span></div>
+    <div class="item"><span class="item-name">Entrecot</span><span class="price">14,50 €</span></div>
+    <div class="item"><span class="item-name">Crispy</span><span class="price">12,00 €</span></div>
+    <div class="item"><span class="item-name">Cordon Bleu</span><span class="price">12,00 €</span></div>
+    <div class="item"><span class="item-name">Plato de Pollo con Salsa de Champiñones</span><span class="price">12,00 €</span></div>
+  </section>
+
+
+  <!-- TACOS -->
+  <section class="category">
+    <h2 class="category-title">🌮 TACOS</h2>
+
+    <div class="item"><span class="item-name">Tacos de Carne Picada</span><span class="price">8,50 €</span></div>
+    <div class="item"><span class="item-name">Tacos de Pollo</span><span class="price">7,50 €</span></div>
+    <div class="item"><span class="item-name">Tacos Mixtos</span><span class="price">7,50 €</span></div>
+    <div class="item"><span class="item-name">Tacos de Pescado</span><span class="price">10,00 €</span></div>
+    <div class="item"><span class="item-name">Tacos Crispy</span><span class="price">9,00 €</span></div>
+    <div class="item"><span class="item-name">Tacos XL</span><span class="price">11,50 €</span></div>
+    <div class="item"><span class="item-name">Tacos La Casa del Rif</span><span class="price">13,00 €</span></div>
+
+    <p class="category-note">Opción gratinada al horno: +0,50 €</p>
+  </section>
+
+
+  <!-- HAMBURGUESAS -->
+  <section class="category">
+    <h2 class="category-title">🍔 HAMBURGUESAS</h2>
+
+    <div class="item"><span class="item-name">Hamburguesa de Ternera</span><span class="price">7,50 €</span></div>
+    <div class="item"><span class="item-name">Hamburguesa de Pollo</span><span class="price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Hamburguesa Crispy</span><span class="price">8,50 €</span></div>
+    <div class="item"><span class="item-name">Hamburguesa Doble</span><span class="price">11,50 €</span></div>
+    <div class="item"><span class="item-name">Hamburguesa de Pescado</span><span class="price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Hamburguesa La Casa del Rif</span><span class="price">11,00 €</span></div>
+  </section>
+
+
+  <!-- INFANTIL -->
+  <section class="category">
+    <h2 class="category-title">👧 MENÚ INFANTIL</h2>
+
+    <div class="item"><span class="item-name">Mini Burger (solo carne) + Patatas Fritas</span><span class="price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Nuggets + Spaghetti</span><span class="price">6,00 €</span></div>
+  </section>
+
+
+  <!-- BOCADILLOS -->
+  <section class="category">
+    <h2 class="category-title">🥖 BOCADILLOS</h2>
+
+    <p class="category-note">Pan casero elaborado al carbón.</p>
+
+    <div class="item"><span class="item-name">Bocadillo de Pollo</span><span class="price">6,50 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo de Carne Picada</span><span class="price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo Mixto</span><span class="price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo de Gambas</span><span class="price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo de Calamar</span><span class="price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo de Pescado</span><span class="price">7,50 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo de Pollo Rojo</span><span class="price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo Crispy</span><span class="price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo de Merguez</span><span class="price">7,50 €</span></div>
+    <div class="item"><span class="item-name">Bocadillo de Hígado</span><span class="price">7,00 €</span></div>
+  </section>
+
+
+  <!-- PIZZAS -->
+  <section class="category">
+    <h2 class="category-title">🍕 PIZZAS</h2>
+
+    <div class="item"><span class="item-name">Pizza Margarita</span><span class="price">7,50 €</span></div>
+    <div class="item"><span class="item-name">Pizza Cuatro Quesos</span><span class="price">9,00 €</span></div>
+    <div class="item"><span class="item-name">Pizza de Marisco</span><span class="price">12,00 €</span></div>
+    <div class="item"><span class="item-name">Pizza Pesto</span><span class="price">10,50 €</span></div>
+    <div class="item"><span class="item-name">Pizza de Salmón</span><span class="price">11,00 €</span></div>
+    <div class="item"><span class="item-name">Pizza de Atún</span><span class="price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Pizza de Verduras</span><span class="price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Pizza Napolitana</span><span class="price">10,00 €</span></div>
+    <div class="item"><span class="item-name">Pizza de Tres Carnes</span><span class="price">10,00 €</span></div>
+  </section>
+
+
+  <!-- PASTA -->
+  <section class="category">
+    <h2 class="category-title">🍝 PASTA</h2>
+
+    <div class="item"><span class="item-name">Pasta de Pollo y Champiñones</span><span class="price">9,00 €</span></div>
+    <div class="item"><span class="item-name">Pasta de Gambas y Tomate</span><span class="price">10,00 €</span></div>
+    <div class="item"><span class="item-name">Pasticcio</span><span class="price">9,00 €</span></div>
+  </section>
+
+
+  <!-- POSTRES MARROQUIES -->
+  <section class="category">
+    <h2 class="category-title">🍰 POSTRES MARROQUÍES</h2>
+
+    <div class="item"><span class="item-name">Msemen</span><span class="price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Harcha</span><span class="price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Baghrir</span><span class="price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Basbousa</span><span class="price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Kunafa</span><span class="price">4,00 €</span></div>
+
+    <div class="item">
+      <span class="item-name">Dulces Marroquíes Variados</span>
+      <span class="price"></span>
+    </div>
+  </section>
+
+
+  <!-- POSTRES -->
+  <section class="category">
+    <h2 class="category-title">🍰 POSTRES Y PASTELERÍA</h2>
+
+    <div class="item"><span class="item-name">Cheesecake de Limón</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Cheesecake de Pistacho</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Cheesecake de Frambuesa</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Tiramisú</span><span class="price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Tarta de Lotus</span><span class="price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Tarta de Chocolate</span><span class="price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Jouara</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Bolas de Helado</span><span class="price">2,50 €</span></div>
+  </section>
+
+
+  <!-- POSTRES Y BEBIDAS -->
+  <section class="category">
+    <h2 class="category-title">🍮 POSTRES Y BEBIDAS ESPECIALES</h2>
+
+    <div class="item"><span class="item-name">Flan</span><span class="price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Muhallebi</span><span class="price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Batido de Aguacate</span><span class="price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Batido de Plátano</span><span class="price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Batido de Frutas</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Batido de Mango</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Zumo de Naranja Natural</span><span class="price">4,00 €</span></div>
+    <div class="item"><span class="item-name">ZaaZaa</span><span class="price">5,00 €</span></div>
+  </section>
+
+
+  <!-- CAFE -->
+  <section class="category">
+    <h2 class="category-title">☕ CAFÉ Y TÉ</h2>
+
+    <div class="item"><span class="item-name">Café Solo</span><span class="price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Cortado</span><span class="price">1,70 €</span></div>
+    <div class="item"><span class="item-name">Café con Leche</span><span class="price">1,80 €</span></div>
+    <div class="item"><span class="item-name">Americano</span><span class="price">1,90 €</span></div>
+    <div class="item"><span class="item-name">Cappuccino</span><span class="price">2,30 €</span></div>
+    <div class="item"><span class="item-name">Latte</span><span class="price">5,50 €</span></div>
+    <div class="item"><span class="item-name">Té Marroquí</span><span class="price">1,80 €</span></div>
+    <div class="item"><span class="item-name">Tetera para 1 Persona</span><span class="price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Tetera para 2 Personas</span><span class="price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Té de Azahar</span><span class="price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Poleo</span><span class="price">2,00 €</span></div>
+  </section>
+
+
+  <!-- BEBIDAS -->
+  <section class="category">
+    <h2 class="category-title">🍹 BEBIDAS</h2>
+
+    <p class="category-note">TODO SIN ALCOHOL</p>
+
+    <div class="item"><span class="item-name">Mojito Clásico</span><span class="price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Mojito Blue</span><span class="price">6,50 €</span></div>
+    <div class="item"><span class="item-name">Piña Colada</span><span class="price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Matcha Iced Tea</span><span class="price">6,50 €</span></div>
+    <div class="item"><span class="item-name">Caramel Macchiato</span><span class="price">7,00 €</span></div>
+    <div class="item"><span class="item-name">San Francisco</span><span class="price">6,50 €</span></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 La Casa del Rif</p>
+  <a class="back-home" href="index.html">← Volver al inicio</a>
+</footer>
+
+</body>
+</html>

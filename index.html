@@ -82,21 +82,11 @@
     /* LOGO */
 
     .logo {
-      width: 110px;
-      height: 110px;
+      width: 300px;
+      max-width: 85%;
+      height: auto;
+      display: block;
       margin: 0 auto 28px;
-
-      border: 2px solid var(--green);
-      border-radius: 50%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-family: Georgia, serif;
-      font-size: 38px;
-      font-weight: bold;
-      letter-spacing: -2px;
     }
 
     /* BRAND */
@@ -144,7 +134,6 @@
     .description {
       max-width: 620px;
       margin: 0 auto;
-
       color: var(--text);
       font-size: 17px;
       line-height: 1.9;
@@ -158,18 +147,13 @@
 
     .button {
       display: inline-block;
-
       padding: 14px 30px;
-
       border: 1px solid var(--green);
       border-radius: 30px;
-
       color: var(--green);
       text-decoration: none;
-
       font-size: 15px;
       font-weight: bold;
-
       transition: 0.3s ease;
     }
 
@@ -182,7 +166,6 @@
 
     .footer {
       margin-top: 60px;
-
       color: #7b8580;
       font-size: 13px;
       letter-spacing: 1px;
@@ -216,9 +199,8 @@
       }
 
       .logo {
-        width: 88px;
-        height: 88px;
-        font-size: 30px;
+        width: 260px;
+        max-width: 90%;
       }
 
       .brand {
@@ -275,13 +257,13 @@
 
       </div>
 
-
       <!-- LOGO -->
 
-      <div class="logo">
-        LR
-      </div>
-
+      <img
+        class="logo"
+        src="logo.png"
+        alt="La Casa del Rif Restaurante"
+      >
 
       <!-- BRAND -->
 
@@ -289,18 +271,15 @@
         La Casa del Rif
       </div>
 
-
       <!-- TITLE -->
 
       <h1 id="welcome">
         Bienvenidos
       </h1>
 
-
       <!-- LINE -->
 
       <div class="line"></div>
-
 
       <!-- OPENING -->
 
@@ -310,7 +289,6 @@
       >
         Abrimos muy pronto
       </div>
-
 
       <!-- DESCRIPTION -->
 
@@ -323,7 +301,6 @@
         una experiencia auténtica, cálida y llena
         de sabores.
       </p>
-
 
       <!-- CONTACT -->
 
@@ -339,7 +316,6 @@
 
       </div>
 
-
       <!-- FOOTER -->
 
       <div class="footer">
@@ -349,7 +325,6 @@
     </section>
 
   </main>
-
 
   <script>
 
@@ -390,7 +365,6 @@
 
     };
 
-
     function setLanguage(language, button) {
 
       const text = translations[language];
@@ -413,13 +387,11 @@
       document.getElementById("contact").textContent =
         text.contact;
 
-
       document
         .querySelectorAll(".lang")
         .forEach(function(btn) {
           btn.classList.remove("active");
         });
-
 
       button.classList.add("active");
     }

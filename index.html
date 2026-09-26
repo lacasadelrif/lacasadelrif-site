@@ -151,15 +151,108 @@
       border: 1px solid var(--green);
       border-radius: 30px;
       color: var(--green);
+      background: transparent;
       text-decoration: none;
       font-size: 15px;
       font-weight: bold;
+      cursor: pointer;
       transition: 0.3s ease;
     }
 
     .button:hover {
       background: var(--green);
       color: var(--white);
+    }
+
+    /* CONTACT MODAL */
+
+    .contact-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 59, 50, 0.45);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .contact-modal.show {
+      display: flex;
+    }
+
+    .contact-box {
+      width: 100%;
+      max-width: 400px;
+      background: var(--cream);
+      border-radius: 22px;
+      padding: 30px 22px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      position: relative;
+      border: 1px solid rgba(166, 120, 53, 0.35);
+    }
+
+    .contact-logo {
+      width: 130px;
+      max-width: 70%;
+      height: auto;
+      margin: 0 auto 15px;
+      display: block;
+    }
+
+    .contact-title {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--green);
+      font-size: 28px;
+      margin-bottom: 7px;
+    }
+
+    .contact-subtitle {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 14px 18px;
+      margin: 10px 0;
+      border: 1px solid rgba(24, 59, 50, 0.25);
+      border-radius: 14px;
+      color: var(--green);
+      background: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .contact-link:hover {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+    }
+
+    .close-contact {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      border: none;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--green);
+      font-size: 25px;
+      cursor: pointer;
+      line-height: 35px;
     }
 
     /* FOOTER */
@@ -220,6 +313,10 @@
       .footer {
         margin-top: 45px;
       }
+
+      .contact-box {
+        padding: 27px 18px;
+      }
     }
   </style>
 </head>
@@ -257,6 +354,7 @@
 
       </div>
 
+
       <!-- LOGO -->
 
       <img
@@ -265,11 +363,13 @@
         alt="La Casa del Rif Restaurante"
       >
 
+
       <!-- BRAND -->
 
       <div class="brand">
         La Casa del Rif
       </div>
+
 
       <!-- TITLE -->
 
@@ -277,9 +377,11 @@
         Bienvenidos
       </h1>
 
+
       <!-- LINE -->
 
       <div class="line"></div>
+
 
       <!-- OPENING -->
 
@@ -289,6 +391,7 @@
       >
         Abrimos muy pronto
       </div>
+
 
       <!-- DESCRIPTION -->
 
@@ -302,19 +405,21 @@
         de sabores.
       </p>
 
-      <!-- CONTACT -->
+
+      <!-- CONTACT BUTTON -->
 
       <div class="buttons">
 
-        <a
+        <button
           class="button"
-          href="mailto:contact@lacasadelrif.com"
+          onclick="openContact()"
           id="contact"
         >
           Contáctanos
-        </a>
+        </button>
 
       </div>
+
 
       <!-- FOOTER -->
 
@@ -325,6 +430,90 @@
     </section>
 
   </main>
+
+
+  <!-- CONTACT MODAL -->
+
+  <div
+    class="contact-modal"
+    id="contactModal"
+    onclick="closeContactOutside(event)"
+  >
+
+    <div class="contact-box">
+
+      <button
+        class="close-contact"
+        onclick="closeContact()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <img
+        class="contact-logo"
+        src="logo.png"
+        alt="La Casa del Rif"
+      >
+
+      <div class="contact-title" id="contactTitle">
+        Contáctanos
+      </div>
+
+      <div class="contact-subtitle" id="contactSubtitle">
+        La Casa del Rif
+      </div>
+
+
+      <!-- PHONE -->
+
+      <a
+        class="contact-link"
+        href="tel:+34666290425"
+      >
+        📞 +34 666 29 04 25
+      </a>
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        class="contact-link"
+        href="https://wa.me/34666290425"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        💬 WhatsApp
+      </a>
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        class="contact-link"
+        href="https://www.instagram.com/la_casa_del_rif/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📸 Instagram
+      </a>
+
+
+      <!-- TIKTOK -->
+
+      <a
+        class="contact-link"
+        href="https://www.tiktok.com/@lacasadelrif1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🎵 TikTok
+      </a>
+
+    </div>
+
+  </div>
+
 
   <script>
 
@@ -337,6 +526,8 @@
         description:
           "Una nueva dirección llega muy pronto. La Casa del Rif prepara para vosotros una experiencia auténtica, cálida y llena de sabores.",
         contact: "Contáctanos",
+        contactTitle: "Contáctanos",
+        contactSubtitle: "La Casa del Rif",
         direction: "ltr",
         language: "es"
       },
@@ -348,6 +539,8 @@
         description:
           "وجهة جديدة تفتح أبوابها قريباً. لا كاسا ديل ريف تحضر لكم تجربة أصيلة، دافئة ومليئة بالنكهات.",
         contact: "تواصل معنا",
+        contactTitle: "تواصل معنا",
+        contactSubtitle: "لا كاسا ديل ريف",
         direction: "rtl",
         language: "ar"
       },
@@ -359,11 +552,14 @@
         description:
           "A new destination is coming soon. La Casa del Rif is preparing an authentic, warm and flavorful experience for you.",
         contact: "Contact us",
+        contactTitle: "Contact us",
+        contactSubtitle: "La Casa del Rif",
         direction: "ltr",
         language: "en"
       }
 
     };
+
 
     function setLanguage(language, button) {
 
@@ -387,14 +583,60 @@
       document.getElementById("contact").textContent =
         text.contact;
 
+      document.getElementById("contactTitle").textContent =
+        text.contactTitle;
+
+      document.getElementById("contactSubtitle").textContent =
+        text.contactSubtitle;
+
+
       document
         .querySelectorAll(".lang")
         .forEach(function(btn) {
           btn.classList.remove("active");
         });
 
+
       button.classList.add("active");
     }
+
+
+    function openContact() {
+
+      document
+        .getElementById("contactModal")
+        .classList.add("show");
+
+      document.body.style.overflow = "hidden";
+    }
+
+
+    function closeContact() {
+
+      document
+        .getElementById("contactModal")
+        .classList.remove("show");
+
+      document.body.style.overflow = "";
+    }
+
+
+    function closeContactOutside(event) {
+
+      if (event.target === document.getElementById("contactModal")) {
+        closeContact();
+      }
+
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+        closeContact();
+      }
+
+    });
 
   </script>
 

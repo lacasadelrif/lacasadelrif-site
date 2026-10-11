@@ -134,6 +134,9 @@ header{
   bottom:22px;
   height:calc(50% - 48px);
 }
+.category:has(.photo-three) .category-photo:not(.photo-two):not(.photo-three){height:calc(33.333% - 48px);bottom:auto;}
+.category:has(.photo-three) .category-photo.photo-two{top:calc(33.333% + 4px);height:calc(33.333% - 48px);bottom:auto;}
+.category-photo.photo-three{top:calc(66.666% + 4px);bottom:22px;height:calc(33.333% - 48px);}
 .category .item,
 .category .category-note{width:59%;box-sizing:border-box;}
 .category .item{
@@ -163,6 +166,9 @@ body.rtl .category .price{direction:ltr;text-align:left;justify-self:start;}
   .category-photo{top:76px;right:14px;bottom:16px;width:34%;height:calc(100% - 92px);border-radius:10px;}
   .category:has(.photo-two) .category-photo:not(.photo-two){height:calc(50% - 42px);bottom:auto;}
   .category-photo.photo-two{top:calc(50% + 4px);bottom:16px;height:calc(50% - 42px);}
+  .category:has(.photo-three) .category-photo:not(.photo-two):not(.photo-three){height:calc(33.333% - 42px);bottom:auto;}
+  .category:has(.photo-three) .category-photo.photo-two{top:calc(33.333% + 4px);height:calc(33.333% - 42px);bottom:auto;}
+  .category-photo.photo-three{top:calc(66.666% + 4px);bottom:16px;height:calc(33.333% - 42px);}
   .category .item,.category .category-note{width:58%;}
   .category .item{column-gap:8px;padding:12px 0;}
   .category .price{min-width:68px;font-size:14px;}
@@ -536,7 +542,9 @@ Nachos con Carne Picada y Salsa de Queso
 <h2 class="category-title">
 🍚 <span data-i18n="couscous">CUSCÚS MARROQUÍ</span>
 </h2>
-<img class="category-photo" src="https://upload.wikimedia.org/wikipedia/commons/8/85/Moroccan_traditional_couscous.jpg" alt="Cuscús marroquí" loading="lazy">
+<img class="category-photo" src="food-fried-sardines.jpg" alt="Sardinas fritas" loading="lazy">
+
+<img class="category-photo photo-two" src="food-grilled-salmon.jpg" alt="Salmón a la plancha" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="vegetable_couscous">Cuscús de Verduras</span><span class="price">8,00 €</span></div>
@@ -554,7 +562,7 @@ Nachos con Carne Picada y Salsa de Queso
 <h2 class="category-title">
 🐟 <span data-i18n="fish">PESCADOS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=640&h=900&q=85" alt="Pescados y mariscos" loading="lazy">
+<img class="category-photo photo-three" src="food-grilled-seabream.jpg" alt="Dorada a la plancha" loading="lazy">
 <img class="category-photo photo-two" src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=640&h=900&q=85" alt="Mariscos - segunda imagen" loading="lazy">
 
 
@@ -608,7 +616,7 @@ Pescados frescos según el día.
 <h2 class="category-title">
 🔥 <span data-i18n="meats">PINCHITOS Y CARNES</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=640&h=900&q=85" alt="Pinchitos y carnes" loading="lazy">
+<img class="category-photo" src="food-lamb-ribs.jpg" alt="Costillas de cordero a la parrilla" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="chicken_skewers">Pinchitos de Pollo</span><span class="price">10,50 €</span></div>
@@ -630,7 +638,7 @@ Pescados frescos según el día.
 <h2 class="category-title">
 🌮 <span data-i18n="tacos">TACOS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=640&h=1100&q=85" alt="Tacos" loading="lazy">
+<img class="category-photo" src="food-double-burger.jpg" alt="Hamburguesa doble de La Casa del Rif" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="meat_tacos">Tacos de Carne Picada</span><span class="price">8,50 €</span></div>

@@ -376,6 +376,38 @@ body.de{
     width:100% !important;
   }
 }
+
+/* Approved portrait photo style for Moroccan tajines only */
+.tajines-category > .category-photo{
+  position:static !important;
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:3 / 4 !important;
+  max-height:none !important;
+  min-height:0 !important;
+  margin:20px auto 28px !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  border-radius:16px !important;
+  border:1px solid #d8c58e !important;
+  box-shadow:0 5px 16px rgba(24,59,50,.12) !important;
+}
+.tajines-category > .item,
+.tajines-category > .category-note{
+  width:100% !important;
+  box-sizing:border-box !important;
+}
+@media(max-width:600px){
+  .tajines-category > .category-photo{
+    width:100% !important;
+    aspect-ratio:3 / 4 !important;
+    height:auto !important;
+    margin:16px auto 24px !important;
+    border-radius:14px !important;
+  }
+}
+
 </style>
 </head>
 
@@ -556,7 +588,7 @@ Nachos con Carne Picada y Salsa de Queso
 
 <!-- TAJINES -->
 
-<section class="category">
+<section class="category tajines-category">
 
 <h2 class="category-title">
 🍲 <span data-i18n="tajines">TAJINES MARROQUÍES</span>

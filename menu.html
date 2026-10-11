@@ -103,21 +103,23 @@ header{
 }
 
 
+/* Landscape food photo for each menu section */
 .category-photo{
-  float:right;
-  width:210px;
-  height:280px;
+  display:block;
+  width:100%;
+  height:190px;
   object-fit:cover;
-  border-radius:14px;
+  object-position:center;
+  border-radius:12px;
   border:1px solid #d8c58e;
-  margin:2px 0 16px 20px;
+  margin:8px 0 14px;
   box-shadow:0 4px 14px rgba(24,59,50,.12);
 }
-.category::after{content:"";display:block;clear:both;}
-body.rtl .category-photo{float:left;margin:2px 20px 16px 0;}
+@media(min-width:900px){
+  .category-photo{height:220px;}
+}
 @media(max-width:600px){
-  .category-photo{float:none;display:block;width:100%;height:190px;margin:0 0 12px;border-radius:12px;}
-  body.rtl .category-photo{margin:0 0 12px;}
+  .category-photo{height:155px;margin:6px 0 12px;border-radius:10px;}
 }
 
 .category-note{

@@ -103,7 +103,7 @@ header{
 }
 
 
-/* Side image spans the complete category card; prices stay in a fixed column */
+/* One or two portrait photos fill the side column for the full category height */
 .category{
   position:relative;
   overflow:hidden;
@@ -116,7 +116,7 @@ header{
   display:block;
   width:34%;
   height:auto;
-  min-height:240px;
+  min-height:180px;
   object-fit:cover;
   object-position:center;
   border-radius:12px;
@@ -124,44 +124,37 @@ header{
   margin:0;
   box-shadow:0 4px 14px rgba(24,59,50,.12);
 }
-.category .item,
-.category .category-note{
-  width:59%;
+.category-photo:not(.photo-two){bottom:22px;}
+.category-photo.photo-two{
+  top:calc(50% + 4px);
+  bottom:22px;
 }
+.category:has(.photo-two) .category-photo:not(.photo-two){
+  bottom:calc(50% + 4px);
+}
+.category .item,
+.category .category-note{width:59%;}
 .category .item{
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
   align-items:start;
   column-gap:12px;
 }
-.category .item-name{
-  min-width:0;
-  overflow-wrap:anywhere;
-}
-.category .price{
-  justify-self:end;
-  text-align:right;
-  min-width:76px;
-}
-.category::after{content:"";display:block;clear:both;}
+.category .item-name{min-width:0;overflow-wrap:anywhere;}
+.category .price{justify-self:end;text-align:right;min-width:76px;}
 body.rtl .category-photo{right:auto;left:22px;}
 body.rtl .category .item,
 body.rtl .category .category-note{margin-left:auto;}
 body.rtl .category .price{direction:ltr;text-align:left;justify-self:start;}
 @media(max-width:900px){
-  .category-photo{right:16px;width:35%;min-height:200px;}
+  .category-photo{right:16px;width:35%;min-height:160px;}
   .category .item,.category .category-note{width:58%;}
   body.rtl .category-photo{right:auto;left:16px;}
 }
 @media(max-width:600px){
-  .category-photo{
-    top:76px;
-    right:14px;
-    bottom:16px;
-    width:34%;
-    min-height:180px;
-    border-radius:10px;
-  }
+  .category-photo{top:76px;right:14px;bottom:16px;width:34%;min-height:130px;border-radius:10px;}
+  .category-photo.photo-two{top:calc(50% + 4px);bottom:16px;}
+  .category:has(.photo-two) .category-photo:not(.photo-two){bottom:calc(50% + 4px);}
   .category .item,.category .category-note{width:58%;}
   .category .item{column-gap:8px;padding:12px 0;}
   .category .price{min-width:68px;font-size:14px;}
@@ -388,6 +381,7 @@ De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.
 
 <h2 class="category-title">☀️ <span data-i18n="breakfast">DESAYUNOS</span></h2>
 <img class="category-photo" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=640&h=900&q=85" alt="Desayunos" loading="lazy">
+<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=640&h=900&q=85" alt="Desayunos - segunda imagen" loading="lazy">
 
 
 <div class="item">
@@ -458,6 +452,7 @@ ENTRANTES ÁRABES Y ENSALADAS
 </span>
 </h2>
 <img class="category-photo" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=640&h=900&q=85" alt="Entrantes árabes y ensaladas" loading="lazy">
+<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=640&h=900&q=85" alt="Entrantes árabes y ensaladas - segunda imagen" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="harira">Harira Marroquí</span><span class="price">4,00 €</span></div>
@@ -552,6 +547,7 @@ Nachos con Carne Picada y Salsa de Queso
 🐟 <span data-i18n="fish">PESCADOS</span>
 </h2>
 <img class="category-photo" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=640&h=900&q=85" alt="Pescados y mariscos" loading="lazy">
+<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=640&h=900&q=85" alt="Pescados y mariscos - segunda imagen" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="mixed_fish">Fritura de Pescado Mixta</span><span class="price">17,50 €</span></div>
@@ -696,6 +692,7 @@ Mini Burger (solo carne) + Patatas Fritas
 🥖 <span data-i18n="sandwiches">BOCADILLOS</span>
 </h2>
 <img class="category-photo" src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=640&h=900&q=85" alt="Bocadillos" loading="lazy">
+<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=640&h=900&q=85" alt="Bocadillos - segunda imagen" loading="lazy">
 
 
 <p class="category-note" data-i18n="charcoal_bread">
@@ -723,6 +720,7 @@ Pan casero elaborado al carbón.
 🍕 <span data-i18n="pizzas">PIZZAS</span>
 </h2>
 <img class="category-photo" src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=640&h=900&q=85" alt="Pizzas" loading="lazy">
+<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=640&h=900&q=85" alt="Pizzas - segunda imagen" loading="lazy">
 
 
 <div class="item"><span class="item-name">Pizza Margarita</span><span class="price">7,50 €</span></div>
@@ -791,6 +789,7 @@ POSTRES Y PASTELERÍA
 </span>
 </h2>
 <img class="category-photo" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=640&h=900&q=85" alt="Postres y pastelería" loading="lazy">
+<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=640&h=900&q=85" alt="Postres y pastelería - segunda imagen" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="lemon_cheesecake">Cheesecake de Limón</span><span class="price">4,00 €</span></div>
@@ -840,6 +839,7 @@ CAFÉ Y TÉ
 </span>
 </h2>
 <img class="category-photo" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&h=900&q=85" alt="Café y té" loading="lazy">
+<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&h=900&q=85" alt="Café y té - segunda imagen" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="espresso">Café Solo</span><span class="price">1,50 €</span></div>

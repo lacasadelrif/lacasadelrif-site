@@ -103,23 +103,24 @@ header{
 }
 
 
-/* Landscape food photo for each menu section */
+/* Portrait food photo for every menu section */
 .category-photo{
   display:block;
   width:100%;
-  height:190px;
+  max-width:260px;
+  height:340px;
   object-fit:cover;
   object-position:center;
-  border-radius:12px;
+  border-radius:14px;
   border:1px solid #d8c58e;
-  margin:8px 0 14px;
+  margin:10px auto 18px;
   box-shadow:0 4px 14px rgba(24,59,50,.12);
 }
 @media(min-width:900px){
-  .category-photo{height:220px;}
+  .category-photo{height:380px;max-width:290px;}
 }
 @media(max-width:600px){
-  .category-photo{height:155px;margin:6px 0 12px;border-radius:10px;}
+  .category-photo{width:100%;max-width:none;height:260px;margin:8px 0 14px;border-radius:12px;}
 }
 
 .category-note{
@@ -341,7 +342,7 @@ De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.
 <section class="category">
 
 <h2 class="category-title">☀️ <span data-i18n="breakfast">DESAYUNOS</span></h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=900&h=520&q=85" alt="Desayunos" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=640&h=900&q=85" alt="Desayunos" loading="lazy">
 
 
 <div class="item">
@@ -411,7 +412,7 @@ De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.
 ENTRANTES ÁRABES Y ENSALADAS
 </span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=640&h=900&q=82" alt="Entrantes árabes y ensaladas" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=640&h=900&q=85" alt="Entrantes árabes y ensaladas" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="harira">Harira Marroquí</span><span class="price">4,00 €</span></div>
@@ -440,7 +441,7 @@ ENTRANTES ÁRABES Y ENSALADAS
 <h2 class="category-title">
 🧀 <span data-i18n="nachos">NACHOS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=640&h=900&q=82" alt="Nachos" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=640&h=900&q=85" alt="Nachos" loading="lazy">
 
 
 <div class="item">
@@ -467,7 +468,7 @@ Nachos con Carne Picada y Salsa de Queso
 <h2 class="category-title">
 🍲 <span data-i18n="tajines">TAJINES MARROQUÍES</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&h=520&q=85" alt="Tajines marroquíes" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=640&h=900&q=85" alt="Tajines marroquíes" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="beef_prunes">Tajín de Ternera con Ciruelas</span><span class="price">10,50 €</span></div>
@@ -487,7 +488,7 @@ Nachos con Carne Picada y Salsa de Queso
 <h2 class="category-title">
 🍚 <span data-i18n="couscous">CUSCÚS MARROQUÍ</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=640&h=900&q=82" alt="Cuscús marroquí" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=640&h=900&q=85" alt="Cuscús marroquí" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="vegetable_couscous">Cuscús de Verduras</span><span class="price">8,00 €</span></div>
@@ -505,7 +506,7 @@ Nachos con Carne Picada y Salsa de Queso
 <h2 class="category-title">
 🐟 <span data-i18n="fish">PESCADOS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=640&h=900&q=82" alt="Pescados y mariscos" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=640&h=900&q=85" alt="Pescados y mariscos" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="mixed_fish">Fritura de Pescado Mixta</span><span class="price">17,50 €</span></div>
@@ -558,7 +559,7 @@ Pescados frescos según el día.
 <h2 class="category-title">
 🔥 <span data-i18n="meats">PINCHITOS Y CARNES</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=640&h=900&q=82" alt="Pinchitos y carnes" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=640&h=900&q=85" alt="Pinchitos y carnes" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="chicken_skewers">Pinchitos de Pollo</span><span class="price">10,50 €</span></div>
@@ -580,7 +581,7 @@ Pescados frescos según el día.
 <h2 class="category-title">
 🌮 <span data-i18n="tacos">TACOS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=640&h=900&q=82" alt="Tacos" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=640&h=900&q=85" alt="Tacos" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="meat_tacos">Tacos de Carne Picada</span><span class="price">8,50 €</span></div>
@@ -605,7 +606,7 @@ Opción gratinada al horno: +0,50 €
 <h2 class="category-title">
 🍔 <span data-i18n="burgers">HAMBURGUESAS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=640&h=900&q=82" alt="Hamburguesas" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=640&h=900&q=85" alt="Hamburguesas" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="beef_burger">Hamburguesa de Ternera</span><span class="price">7,50 €</span></div>
@@ -624,7 +625,7 @@ Opción gratinada al horno: +0,50 €
 <h2 class="category-title">
 👧 <span data-i18n="kids">MENÚ INFANTIL</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=640&h=900&q=82" alt="Menú infantil" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=640&h=900&q=85" alt="Menú infantil" loading="lazy">
 
 
 <div class="item">
@@ -649,7 +650,7 @@ Mini Burger (solo carne) + Patatas Fritas
 <h2 class="category-title">
 🥖 <span data-i18n="sandwiches">BOCADILLOS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=640&h=900&q=82" alt="Bocadillos" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=640&h=900&q=85" alt="Bocadillos" loading="lazy">
 
 
 <p class="category-note" data-i18n="charcoal_bread">
@@ -676,7 +677,7 @@ Pan casero elaborado al carbón.
 <h2 class="category-title">
 🍕 <span data-i18n="pizzas">PIZZAS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=640&h=900&q=82" alt="Pizzas" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=640&h=900&q=85" alt="Pizzas" loading="lazy">
 
 
 <div class="item"><span class="item-name">Pizza Margarita</span><span class="price">7,50 €</span></div>
@@ -699,7 +700,7 @@ Pan casero elaborado al carbón.
 <h2 class="category-title">
 🍝 <span data-i18n="pasta">PASTA</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=640&h=900&q=82" alt="Pasta" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=640&h=900&q=85" alt="Pasta" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="chicken_pasta">Pasta de Pollo y Champiñones</span><span class="price">9,00 €</span></div>
@@ -744,7 +745,7 @@ Dulces Marroquíes Variados
 POSTRES Y PASTELERÍA
 </span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=640&h=900&q=82" alt="Postres y pastelería" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=640&h=900&q=85" alt="Postres y pastelería" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="lemon_cheesecake">Cheesecake de Limón</span><span class="price">4,00 €</span></div>
@@ -769,7 +770,7 @@ POSTRES Y PASTELERÍA
 POSTRES Y BEBIDAS ESPECIALES
 </span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=640&h=900&q=82" alt="Postres y bebidas especiales" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=640&h=900&q=85" alt="Postres y bebidas especiales" loading="lazy">
 
 
 <div class="item"><span class="item-name">Flan</span><span class="price">2,00 €</span></div>
@@ -793,7 +794,7 @@ POSTRES Y BEBIDAS ESPECIALES
 CAFÉ Y TÉ
 </span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&h=900&q=82" alt="Café y té" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&h=900&q=85" alt="Café y té" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="espresso">Café Solo</span><span class="price">1,50 €</span></div>
@@ -818,7 +819,7 @@ CAFÉ Y TÉ
 <h2 class="category-title">
 🍹 <span data-i18n="drinks">BEBIDAS</span>
 </h2>
-<img class="category-photo" src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=640&h=900&q=82" alt="Bebidas" loading="lazy">
+<img class="category-photo" src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=640&h=900&q=85" alt="Bebidas" loading="lazy">
 
 
 <p class="category-note" data-i18n="non_alcoholic">

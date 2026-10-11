@@ -408,6 +408,29 @@ body.de{
   }
 }
 
+
+/* Image placeholders: upload matching files into assets/menu-images/ */
+.tajines-category > .category-photo{
+  position:static !important;
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:3 / 4 !important;
+  max-height:none !important;
+  min-height:0 !important;
+  margin:20px auto 28px !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  border-radius:16px !important;
+  border:1px solid #d8c58e !important;
+  box-shadow:0 5px 16px rgba(24,59,50,.12) !important;
+}
+.tajines-category .item,
+.tajines-category .category-note{width:100% !important;box-sizing:border-box !important;}
+@media(max-width:600px){
+ .tajines-category > .category-photo{width:100% !important;aspect-ratio:3 / 4 !important;height:auto !important;margin:16px auto 24px !important;border-radius:14px !important;}
+}
+
 </style>
 </head>
 
@@ -465,8 +488,8 @@ De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.
 <section class="category">
 
 <h2 class="category-title">☀️ <span data-i18n="breakfast">DESAYUNOS</span></h2>
-<img class="category-photo" src="assets/dish-01.jpg" alt="Desayunos" loading="lazy">
-<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=640&h=900&q=85" alt="Desayuno saludable - segunda imagen" loading="lazy">
+<img class="category-photo" src="assets/menu-images/desayunos.jpg" alt="Desayunos" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/desayunos-2.jpg" alt="Desayuno saludable - segunda imagen" loading="lazy">
 
 
 <div class="item">
@@ -536,8 +559,8 @@ De nuestra cocina a tu mesa, con el auténtico sabor de Marruecos.
 ENTRANTES ÁRABES Y ENSALADAS
 </span>
 </h2>
-<img class="category-photo" src="assets/dish-02.jpg" alt="Harira marroquí tradicional" loading="lazy">
-<img class="category-photo photo-two" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9_%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9.JPG" alt="Pastela marroquí de pollo con almendras" loading="lazy">
+<img class="category-photo" src="assets/menu-images/entrantes-arabes-ensaladas.jpg" alt="Harira marroquí tradicional" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/entrantes-arabes-ensaladas-2.jpg" alt="Pastela marroquí de pollo con almendras" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="harira">Harira Marroquí</span><span class="price">4,00 €</span></div>
@@ -566,7 +589,7 @@ ENTRANTES ÁRABES Y ENSALADAS
 <h2 class="category-title">
 🧀 <span data-i18n="nachos">NACHOS</span>
 </h2>
-<img class="category-photo" src="assets/dish-03.jpg" alt="Nachos" loading="lazy">
+<img class="category-photo" src="assets/menu-images/nachos.jpg" alt="Nachos" loading="lazy">
 
 
 <div class="item">
@@ -593,7 +616,7 @@ Nachos con Carne Picada y Salsa de Queso
 <h2 class="category-title">
 🍲 <span data-i18n="tajines">TAJINES MARROQUÍES</span>
 </h2>
-<img class="category-photo" src="assets/tajines-marocains-real.jpg" alt="Tajines marroquíes" loading="lazy">
+<img class="category-photo" src="assets/menu-images/tajines-marroquies.jpg" alt="Tajines marroquíes" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="beef_prunes">Tajín de Ternera con Ciruelas</span><span class="price">10,50 €</span></div>
@@ -613,9 +636,9 @@ Nachos con Carne Picada y Salsa de Queso
 <h2 class="category-title">
 🍚 <span data-i18n="couscous">CUSCÚS MARROQUÍ</span>
 </h2>
-<img class="category-photo" src="assets/dish-02.jpg" alt="Sardinas fritas" loading="lazy">
+<img class="category-photo" src="assets/menu-images/cuscus-marroqui.jpg" alt="Sardinas fritas" loading="lazy">
 
-<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=640&h=900&q=85" alt="Salmón a la plancha" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/cuscus-marroqui-2.jpg" alt="Salmón a la plancha" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="vegetable_couscous">Cuscús de Verduras</span><span class="price">8,00 €</span></div>
@@ -633,8 +656,8 @@ Nachos con Carne Picada y Salsa de Queso
 <h2 class="category-title">
 🐟 <span data-i18n="fish">PESCADOS</span>
 </h2>
-<img class="category-photo photo-three" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=640&h=900&q=85" alt="Dorada a la plancha" loading="lazy">
-<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=640&h=900&q=85" alt="Mariscos - segunda imagen" loading="lazy">
+<img class="category-photo photo-three" src="assets/menu-images/pescados.jpg" alt="Dorada a la plancha" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/pescados-2.jpg" alt="Mariscos - segunda imagen" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="mixed_fish">Fritura de Pescado Mixta</span><span class="price">17,50 €</span></div>
@@ -687,7 +710,7 @@ Pescados frescos según el día.
 <h2 class="category-title">
 🔥 <span data-i18n="meats">PINCHITOS Y CARNES</span>
 </h2>
-<img class="category-photo" src="assets/dish-03.jpg" alt="Costillas de cordero a la parrilla" loading="lazy">
+<img class="category-photo" src="assets/menu-images/pinchitos-carnes.jpg" alt="Costillas de cordero a la parrilla" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="chicken_skewers">Pinchitos de Pollo</span><span class="price">10,50 €</span></div>
@@ -709,7 +732,7 @@ Pescados frescos según el día.
 <h2 class="category-title">
 🌮 <span data-i18n="tacos">TACOS</span>
 </h2>
-<img class="category-photo" src="assets/dish-01.jpg" alt="Hamburguesa doble de La Casa del Rif" loading="lazy">
+<img class="category-photo" src="assets/menu-images/tacos.jpg" alt="Hamburguesa doble de La Casa del Rif" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="meat_tacos">Tacos de Carne Picada</span><span class="price">8,50 €</span></div>
@@ -734,7 +757,7 @@ Opción gratinada al horno: +0,50 €
 <h2 class="category-title">
 🍔 <span data-i18n="burgers">HAMBURGUESAS</span>
 </h2>
-<img class="category-photo" src="assets/dish-02.jpg" alt="Hamburguesas" loading="lazy">
+<img class="category-photo" src="assets/menu-images/hamburguesas.jpg" alt="Hamburguesas" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="beef_burger">Hamburguesa de Ternera</span><span class="price">7,50 €</span></div>
@@ -753,7 +776,7 @@ Opción gratinada al horno: +0,50 €
 <h2 class="category-title">
 👧 <span data-i18n="kids">MENÚ INFANTIL</span>
 </h2>
-<img class="category-photo" src="assets/dish-03.jpg" alt="Menú infantil" loading="lazy">
+<img class="category-photo" src="assets/menu-images/menu-infantil.jpg" alt="Menú infantil" loading="lazy">
 
 
 <div class="item">
@@ -778,8 +801,8 @@ Mini Burger (solo carne) + Patatas Fritas
 <h2 class="category-title">
 🥖 <span data-i18n="sandwiches">BOCADILLOS</span>
 </h2>
-<img class="category-photo" src="assets/dish-01.jpg" alt="Bocadillos" loading="lazy">
-<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=640&h=900&q=85" alt="Bocadillos variados - segunda imagen" loading="lazy">
+<img class="category-photo" src="assets/menu-images/bocadillos.jpg" alt="Bocadillos" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/bocadillos-2.jpg" alt="Bocadillos variados - segunda imagen" loading="lazy">
 
 
 <p class="category-note" data-i18n="charcoal_bread">
@@ -806,8 +829,8 @@ Pan casero elaborado al carbón.
 <h2 class="category-title">
 🍕 <span data-i18n="pizzas">PIZZAS</span>
 </h2>
-<img class="category-photo" src="assets/dish-02.jpg" alt="Pizzas" loading="lazy">
-<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=640&h=900&q=85" alt="Pizza recién horneada - segunda imagen" loading="lazy">
+<img class="category-photo" src="assets/menu-images/pizzas.jpg" alt="Pizzas" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/pizzas-2.jpg" alt="Pizza recién horneada - segunda imagen" loading="lazy">
 
 
 <div class="item"><span class="item-name">Pizza Margarita</span><span class="price">7,50 €</span></div>
@@ -830,7 +853,7 @@ Pan casero elaborado al carbón.
 <h2 class="category-title">
 🍝 <span data-i18n="pasta">PASTA</span>
 </h2>
-<img class="category-photo" src="assets/dish-03.jpg" alt="Pasta" loading="lazy">
+<img class="category-photo" src="assets/menu-images/pasta.jpg" alt="Pasta" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="chicken_pasta">Pasta de Pollo y Champiñones</span><span class="price">9,00 €</span></div>
@@ -849,8 +872,8 @@ Pan casero elaborado al carbón.
 POSTRES MARROQUÍES
 </span>
 </h2>
-<img class="category-photo" src="assets/dish-01.jpg" alt="Msemen marroquí tradicional" loading="lazy">
-<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=640&h=900&q=85" alt="Harcha marroquí tradicional" loading="lazy">
+<img class="category-photo" src="assets/menu-images/postres-marroquies.jpg" alt="Msemen marroquí tradicional" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/postres-marroquies-2.jpg" alt="Harcha marroquí tradicional" loading="lazy">
 
 <div class="item"><span class="item-name">Msemen</span><span class="price">2,00 €</span></div>
 <div class="item"><span class="item-name">Harcha</span><span class="price">2,00 €</span></div>
@@ -877,8 +900,8 @@ Dulces Marroquíes Variados
 POSTRES Y PASTELERÍA
 </span>
 </h2>
-<img class="category-photo" src="assets/dish-02.jpg" alt="Postres y pastelería" loading="lazy">
-<img class="category-photo photo-two" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=640&h=900&q=85" alt="Pastelería variada - segunda imagen" loading="lazy">
+<img class="category-photo" src="assets/menu-images/postres-pasteleria.jpg" alt="Postres y pastelería" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/postres-pasteleria-2.jpg" alt="Pastelería variada - segunda imagen" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="lemon_cheesecake">Cheesecake de Limón</span><span class="price">4,00 €</span></div>
@@ -903,7 +926,7 @@ POSTRES Y PASTELERÍA
 POSTRES Y BEBIDAS ESPECIALES
 </span>
 </h2>
-<img class="category-photo" src="assets/dish-03.jpg" alt="Postres y bebidas especiales" loading="lazy">
+<img class="category-photo" src="assets/menu-images/postres-bebidas-especiales.jpg" alt="Postres y bebidas especiales" loading="lazy">
 
 
 <div class="item"><span class="item-name">Flan</span><span class="price">2,00 €</span></div>
@@ -927,8 +950,8 @@ POSTRES Y BEBIDAS ESPECIALES
 CAFÉ Y TÉ
 </span>
 </h2>
-<img class="category-photo" src="assets/dish-01.jpg" alt="Café y té" loading="lazy">
-<img class="category-photo photo-two" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Moroccan_tea_glasses.jpg/960px-Moroccan_tea_glasses.jpg" alt="Tetera y vasos de té" loading="lazy">
+<img class="category-photo" src="assets/menu-images/cafe-te.jpg" alt="Café y té" loading="lazy">
+<img class="category-photo photo-two" src="assets/menu-images/cafe-te-2.jpg" alt="Tetera y vasos de té" loading="lazy">
 
 
 <div class="item"><span class="item-name" data-i18n="espresso">Café Solo</span><span class="price">1,50 €</span></div>
@@ -953,7 +976,7 @@ CAFÉ Y TÉ
 <h2 class="category-title">
 🍹 <span data-i18n="drinks">BEBIDAS</span>
 </h2>
-<img class="category-photo" src="assets/dish-02.jpg" alt="Bebidas" loading="lazy">
+<img class="category-photo" src="assets/menu-images/bebidas.jpg" alt="Bebidas" loading="lazy">
 
 
 <p class="category-note" data-i18n="non_alcoholic">

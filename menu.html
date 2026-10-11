@@ -103,30 +103,29 @@ header{
 }
 
 
-/* Portrait food photo for every menu section */
+/* Portrait photo on the side, like the printed menu reference */
 .category-photo{
+  float:right;
   display:block;
-  width:100%;
-  max-width:260px;
-  height:340px;
+  width:39%;
+  max-width:290px;
+  height:420px;
   object-fit:cover;
   object-position:center;
-  border-radius:14px;
+  border-radius:12px;
   border:1px solid #d8c58e;
-  margin:10px auto 18px;
+  margin:8px 0 16px 18px;
   box-shadow:0 4px 14px rgba(24,59,50,.12);
 }
-@media(min-width:900px){
-  .category-photo{height:380px;max-width:290px;}
+.category::after{content:"";display:block;clear:both;}
+body.rtl .category-photo{float:left;margin:8px 18px 16px 0;}
+@media(max-width:900px){
+  .category-photo{width:38%;height:340px;margin-left:14px;}
+  body.rtl .category-photo{margin-left:0;margin-right:14px;}
 }
 @media(max-width:600px){
-  .category-photo{
-    width:78%;
-    max-width:260px;
-    height:340px;
-    margin:8px auto 14px;
-    border-radius:12px;
-  }
+  .category-photo{width:36%;height:280px;margin:6px 0 12px 10px;border-radius:10px;}
+  body.rtl .category-photo{margin:6px 10px 12px 0;}
 }
 
 .category-note{

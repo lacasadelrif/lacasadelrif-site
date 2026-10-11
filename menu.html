@@ -103,31 +103,71 @@ header{
 }
 
 
-/* Portrait photo on the side, like the printed menu reference */
+/* Side image spans the complete category card; prices stay in a fixed column */
+.category{
+  position:relative;
+  overflow:hidden;
+}
 .category-photo{
-  float:right;
+  position:absolute;
+  top:82px;
+  right:22px;
+  bottom:22px;
   display:block;
-  width:39%;
-  max-width:290px;
-  height:420px;
+  width:34%;
+  height:auto;
+  min-height:240px;
   object-fit:cover;
   object-position:center;
   border-radius:12px;
   border:1px solid #d8c58e;
-  margin:8px 0 16px 18px;
+  margin:0;
   box-shadow:0 4px 14px rgba(24,59,50,.12);
 }
+.category .item,
+.category .category-note{
+  width:59%;
+}
+.category .item{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:start;
+  column-gap:12px;
+}
+.category .item-name{
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+.category .price{
+  justify-self:end;
+  text-align:right;
+  min-width:76px;
+}
 .category::after{content:"";display:block;clear:both;}
-body.rtl .category-photo{float:left;margin:8px 18px 16px 0;}
+body.rtl .category-photo{right:auto;left:22px;}
+body.rtl .category .item,
+body.rtl .category .category-note{margin-left:auto;}
+body.rtl .category .price{direction:ltr;text-align:left;justify-self:start;}
 @media(max-width:900px){
-  .category-photo{width:38%;height:340px;margin-left:14px;}
-  body.rtl .category-photo{margin-left:0;margin-right:14px;}
+  .category-photo{right:16px;width:35%;min-height:200px;}
+  .category .item,.category .category-note{width:58%;}
+  body.rtl .category-photo{right:auto;left:16px;}
 }
 @media(max-width:600px){
-  .category-photo{width:36%;height:280px;margin:6px 0 12px 10px;border-radius:10px;}
-  body.rtl .category-photo{margin:6px 10px 12px 0;}
+  .category-photo{
+    top:76px;
+    right:14px;
+    bottom:16px;
+    width:34%;
+    min-height:180px;
+    border-radius:10px;
+  }
+  .category .item,.category .category-note{width:58%;}
+  .category .item{column-gap:8px;padding:12px 0;}
+  .category .price{min-width:68px;font-size:14px;}
+  .category .item-name{font-size:14px;line-height:1.45;}
+  body.rtl .category-photo{right:auto;left:14px;}
 }
-
 .category-note{
   text-align:center;
   font-size:14px;

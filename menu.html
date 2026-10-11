@@ -337,6 +337,33 @@ body.de{
     font-size:15px;
   }
 }
+
+/* Professional responsive food gallery: images sit horizontally above menu items */
+.category{overflow:hidden;}
+.category .category-photo,
+.category:has(.photo-two) .category-photo:not(.photo-two),
+.category:has(.photo-three) .category-photo:not(.photo-two):not(.photo-three),
+.category:has(.photo-three) .category-photo.photo-two,
+.category .category-photo.photo-two,
+.category .category-photo.photo-three{
+  position:static; display:inline-block; vertical-align:top;
+  width:calc(50% - 10px); height:clamp(130px,24vw,220px);
+  margin:12px 4px 16px; object-fit:cover; object-position:center;
+  border-radius:12px; box-sizing:border-box;
+}
+.category .item,.category .category-note{width:100%;}
+@media(max-width:600px){
+  .category .category-photo,
+  .category:has(.photo-two) .category-photo:not(.photo-two),
+  .category:has(.photo-three) .category-photo:not(.photo-two):not(.photo-three),
+  .category:has(.photo-three) .category-photo.photo-two,
+  .category .category-photo.photo-two,
+  .category .category-photo.photo-three{
+    width:calc(50% - 8px); height:145px; margin:8px 3px 12px;
+  }
+  .category .item,.category .category-note{width:100%;}
+}
+
 </style>
 </head>
 

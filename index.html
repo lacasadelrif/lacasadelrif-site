@@ -242,6 +242,11 @@
 
     .buttons {
       margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .button {
@@ -741,6 +746,13 @@
           EN
         </button>
 
+        <button
+          class="lang"
+          onclick="setLanguage('de', this)"
+        >
+          DE
+        </button>
+
       </div>
 
 
@@ -806,6 +818,15 @@
         >
           Contáctanos
         </button>
+
+        <a
+          class="button"
+          href="menu.html"
+          id="menuButton"
+          style="text-decoration: none;"
+        >
+          Menú
+        </a>
 
       </div>
 
@@ -1066,6 +1087,9 @@
         contact:
           "Contáctanos",
 
+        menu:
+          "Menú",
+
         contactTitle:
           "Contáctanos",
 
@@ -1097,6 +1121,9 @@
 
         contact:
           "تواصل معنا",
+
+        menu:
+          "القائمة",
 
         contactTitle:
           "تواصل معنا",
@@ -1130,6 +1157,9 @@
         contact:
           "Contact us",
 
+        menu:
+          "Menu",
+
         contactTitle:
           "Contact us",
 
@@ -1141,6 +1171,40 @@
 
         language:
           "en"
+
+      },
+
+      de: {
+
+        title:
+          "La Casa del Rif | Bald geöffnet",
+
+        welcome:
+          "Willkommen",
+
+        opening:
+          "Wir eröffnen bald",
+
+        description:
+          "Ein neues Restaurant eröffnet bald. La Casa del Rif bereitet für Sie ein authentisches, herzliches Erlebnis voller Geschmack vor.",
+
+        contact:
+          "Kontakt",
+
+        menu:
+          "Speisekarte",
+
+        contactTitle:
+          "Kontakt",
+
+        contactSubtitle:
+          "LA CASA DEL RIF",
+
+        direction:
+          "ltr",
+
+        language:
+          "de"
 
       }
 
@@ -1187,6 +1251,10 @@
       document.getElementById("contact")
         .textContent =
         text.contact;
+
+      document.getElementById("menuButton")
+        .textContent =
+        text.menu;
 
 
       document.getElementById("contactTitle")
